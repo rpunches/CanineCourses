@@ -7,15 +7,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FinalProject.DATA.EF//.Metadata
 {
-    class CanineClassesMetadata
-    {
+  
         #region Course Metadata
         public class CourseMetadata
         {
             //public int CourseId { get; set; }
             [Required(ErrorMessage ="*")]
             [StringLength(200, ErrorMessage ="* Course Name cannot be more than 200 characters.")]
-            [Display(Name ="Course Name")]
+            [Display(Name ="Course")]
             public string CourseName { get; set; }
             
             [DisplayFormat(NullDisplayText = "N/A")]
@@ -138,9 +137,8 @@ namespace FinalProject.DATA.EF//.Metadata
                 get { return FirstName + " " + LastName; }
             }
 
-            public string FirstName { get; private set; }
-            public string LastName { get; private set; }
+          
         }
         #endregion
-    }
+    
 }

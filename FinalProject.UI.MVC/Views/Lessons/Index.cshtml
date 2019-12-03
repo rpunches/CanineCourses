@@ -1,63 +1,46 @@
 ﻿@model IEnumerable<FinalProject.DATA.EF.Lesson>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Lessons";
 }
+<div class="container tbMargin">
+    <h2>@ViewBag.Title</h2>
 
-<h2>Index</h2>
+    <p>
+        @Html.ActionLink("Create a new Lesson", "Create")
+    </p>
+        @*<tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LessonTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Introduction)
+            </th>
+            <th></th>
+        </tr>*@
+<div class="row">
+        @foreach (var item in Model)
+        {
+             <div class="col-lg-4 col-md-6 col-12">
+                 <div class="blog-item">
+                     <div class="blog-title">
+                         <h2>  <a href="@Url.Action("Details", new { id = item.LessonId })">  @Html.DisplayFor(modelItem => item.LessonTitle) </a></h2>
+                     </div>
+                     <div class="blog-desc">
+                         <p>  @Html.DisplayFor(modelItem => item.Introduction) </p>
+                     </div>
+                     <tr>
+                         <td>
+                             @Html.ActionLink("Edit", "Edit", new { id = item.LessonId }) |
+                             @Html.ActionLink("Details", "Details", new { id = item.LessonId }) |
+                             @Html.ActionLink("Delete", "Delete", new { id = item.LessonId })
+                         </td>
+                     </tr>
+                 </div>
+                </div><!-- end col -->
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.LessonTitle)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Introduction)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VideoURL)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PdfFileName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cours.CourseName)
-        </th>
-        <th></th>
-    </tr>
+          
+        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.LessonTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Introduction)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VideoURL)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PdfFileName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsActive)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cours.CourseName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.LessonId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.LessonId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.LessonId })
-        </td>
-    </tr>
-}
-
-</table>
+</div>
+</div>

@@ -1,0 +1,14 @@
+﻿.tbMargin{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+/*Course Cards*/
+.course-br{
+    min-height: 304px;
+}
+
+/*Blog Cards*/
+.blog-item{
+   margin: 10px;
+}

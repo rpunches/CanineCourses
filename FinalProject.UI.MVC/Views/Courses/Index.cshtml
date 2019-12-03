@@ -3,43 +3,51 @@
 @{
     ViewBag.Title = "Courses";
 }
+<div class="container tbMargin">
+    <h2>@ViewBag.Title</h2>
 
-<h2>@ViewBag.Title</h2>
+    <p>
+        @Html.ActionLink("Create a new Course", "Create")
+    </p>
 
-<p>
-    @Html.ActionLink("Create a New Course", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CourseName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CourseDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CourseName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CourseDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsActive)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CourseId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CourseId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CourseId })
-        </td>
-    </tr>
-}
 
-</table>
+
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+
+
+
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="course-item">
+                    <div class="course-br">
+                        <div class="course-title">
+                            <h2>
+                                <a href="@Url.Action("Details", new { id = item.CourseId })">
+                                    @Html.DisplayFor(modelItem => item.CourseName)
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="course-desc">
+                            @*@Html.DisplayNameFor(model => model.CourseDescription)*@
+                            <p>  @Html.DisplayFor(modelItem => item.CourseDescription) </p>
+                        </div>
+                        @Html.DisplayNameFor(model => model.IsActive)
+                        @Html.DisplayFor(modelItem => item.IsActive)
+                    </div>
+                    <div class="course-meta-bot">
+                        <ul>
+                            <li>  @Html.ActionLink("Edit", "Edit", new { id = item.CourseId }) |</li>
+                            <li>@Html.ActionLink("Details", "Details", new { id = item.CourseId }) |</li>
+                            <li> @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div><!-- end col -->
+        }
+    </div>
+</div>
