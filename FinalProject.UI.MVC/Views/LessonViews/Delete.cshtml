@@ -1,48 +1,47 @@
 ﻿@model FinalProject.DATA.EF.LessonView
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Are you sure you want to delete this viewed lesson?";
 }
+<div class="container tbMargin">
+    <h2>@ViewBag.Title</h2>
 
-<h2>Delete</h2>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>LessonView</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.DateViewed)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.UserDetail.FullName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DateViewed)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.UserDetail.FullName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Lesson.LessonTitle)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Lesson.LessonTitle)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Lesson.LessonTitle)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DateViewed)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Lesson.LessonTitle)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.DateViewed)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UserDetail.FirstName)
-        </dt>
+        </dl>
 
-        <dd>
-            @Html.DisplayFor(model => model.UserDetail.FirstName)
-        </dd>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to Viewed Lessons", "Index")
+            </div>
+        }
+    </div>
 </div>
