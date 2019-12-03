@@ -1,0 +1,6 @@
+C:\Users\student\Documents\Visual Studio 2017\Projects\11_PROJECT\FinalProject\src\FinalProject.DATA.EF\bin\Debug\FinalProject.DATA.EF.dll
+C:\Users\student\Documents\Visual Studio 2017\Projects\11_PROJECT\FinalProject\src\FinalProject.DATA.EF\bin\Debug\FinalProject.DATA.EF.pdb
+C:\Users\student\Documents\Visual Studio 2017\Projects\11_PROJECT\FinalProject\src\FinalProject.DATA.EF\obj\Debug\FinalProject.DATA.EF.csprojAssemblyReference.cache
+C:\Users\student\Documents\Visual Studio 2017\Projects\11_PROJECT\FinalProject\src\FinalProject.DATA.EF\obj\Debug\FinalProject.DATA.EF.csproj.CoreCompileInputs.cache
+C:\Users\student\Documents\Visual Studio 2017\Projects\11_PROJECT\FinalProject\src\FinalProject.DATA.EF\obj\Debug\FinalProject.DATA.EF.dll
+C:\Users\student\Documents\Visual Studio 2017\Projects\11_PROJECT\FinalProject\src\FinalProject.DATA.EF\obj\Debug\FinalProject.DATA.EF.pdb
