@@ -27,6 +27,9 @@ namespace FinalProject.DATA.EF//.Metadata
             [Display(Name = "Active")]
             public bool IsActive { get; set; }
         }
+        [MetadataType(typeof(CourseMetadata))]
+        public partial class Course { }
+
         #endregion
 
         #region Course Completion Metadata
@@ -46,6 +49,8 @@ namespace FinalProject.DATA.EF//.Metadata
             [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode =true)]
             public System.DateTime DateCompleted { get; set; }
         }
+        [MetadataType(typeof(CourseCompletionMetadata))]
+        public partial class CourseCompletion { }
         #endregion
 
         #region Lesson Metadata
@@ -80,6 +85,8 @@ namespace FinalProject.DATA.EF//.Metadata
             [Display(Name = "Active")]
             public bool IsActive { get; set; }
         }
+        [MetadataType(typeof(LessonMetadata))]
+        public partial class Lesson { }
         #endregion
 
         #region Lesson View Metadata
@@ -99,6 +106,8 @@ namespace FinalProject.DATA.EF//.Metadata
             [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
             public System.DateTime DateViewed { get; set; }
         }
+        [MetadataType(typeof(LessonViewMetadata))]
+        public partial class LessonView { }
         #endregion
 
         #region User Detail Metadata
