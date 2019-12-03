@@ -105,3 +105,4 @@ C:\Users\student\Documents\Visual Studio 2017\Projects\11_PROJECT\FinalProject\s
 C:\Users\student\Documents\Visual Studio 2017\Projects\11_PROJECT\FinalProject\src\FinalProject.UI.MVC\obj\Debug\FinalProject.UI.MVC.csproj.CopyComplete
 C:\Users\student\Documents\Visual Studio 2017\Projects\11_PROJECT\FinalProject\src\FinalProject.UI.MVC\obj\Debug\FinalProject.UI.MVC.dll
 C:\Users\student\Documents\Visual Studio 2017\Projects\11_PROJECT\FinalProject\src\FinalProject.UI.MVC\obj\Debug\FinalProject.UI.MVC.pdb
+C:\Users\student\Documents\Visual Studio 2017\Projects\11_PROJECT\FinalProject\src\FinalProject.UI.MVC\bin\FinalProject.DATA.EF.dll.config
