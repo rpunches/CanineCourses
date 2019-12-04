@@ -33,6 +33,12 @@ namespace FinalProject.UI.MVC.Controllers
             {
                 return HttpNotFound();
             }
+
+            if (lesson.VideoURL != null)
+            {
+                
+            }
+
             return View(lesson);
         }
 

@@ -16,6 +16,16 @@ namespace FinalProject.UI.MVC.Models
     {
         public string Id { get; set; }
 
+        //[Required(AllowEmptyStrings = false)]
+        //[StringLength(50, ErrorMessage = "* First Name cannot be more than 50 characters.")]
+        //[Display(Name = "First Name")]
+        //public string FirstName { get; set; }
+
+        //[Required(AllowEmptyStrings = false)]
+        //[StringLength(50, ErrorMessage = "* Last Name cannot be more than 50 characters.")]
+        //[Display(Name = "Last Name")]
+        //public string LastName { get; set; }
+
         [Required(AllowEmptyStrings = false)]
         [Display(Name = "Email")]
         [EmailAddress]

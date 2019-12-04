@@ -25,22 +25,29 @@
                 @Html.DisplayFor(model => model.Introduction)
             </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.VideoURL)
-            </dt>
+           @if (Model.VideoURL != null)
+           {
+                <dt>
+                    @Html.DisplayNameFor(model => model.VideoURL)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.VideoURL)
-            </dd>
+                <dd>
+                    <a data-fancybox href="@Html.DisplayFor(model => model.VideoURL)"> @Html.DisplayFor(model => model.VideoURL)</a><br>
+                </dd>
+           }
+           @if (Model.PdfFileName != null)
+           {
 
             <dt>
                 @Html.DisplayNameFor(model => model.PdfFileName)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.PdfFileName)
+                <a href="~/Content/lessons/@Html.DisplayFor(model => model.PdfFileName)" data-fancybox="images" data-caption="@Html.DisplayNameFor(model => model.PdfFileName)">
+                   @Html.DisplayFor(model => model.PdfFileName)
+                </a>
             </dd>
-
+           }
             <dt>
                 @Html.DisplayNameFor(model => model.IsActive)
             </dt>
@@ -64,3 +71,15 @@
         @Html.ActionLink("Back to Lessons", "Index")
     </p>
 </div>
+
+@section scripts{
+<script>
+    $('[data-fancybox]').fancybox({
+        youtube: {
+            controls: 0,
+            showinfo: 0
+        },
+       
+    });
+</script>
+    }

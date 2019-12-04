@@ -146,7 +146,8 @@ namespace FinalProject.UI.MVC.Controllers
                     Selected = userRoles.Contains(x.Name),
                     Text = x.Name,
                     Value = x.Name
-                })
+                }),
+              
             });
         }
 

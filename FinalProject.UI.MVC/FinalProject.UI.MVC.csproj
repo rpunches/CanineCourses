@@ -196,6 +196,7 @@
     <Content Include="Content\css\flaticon.css" />
     <Content Include="Content\css\font-awesome.css" />
     <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\jquery.fancybox.min.css" />
     <Content Include="Content\css\owl.carousel.css" />
     <Content Include="Content\css\prettyPhoto.css" />
     <Content Include="Content\css\pr_loading.css" />
@@ -303,6 +304,7 @@
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\custom.js" />
     <Content Include="Content\js\hoverdir.js" />
+    <Content Include="Content\js\jquery.fancybox.min.js" />
     <Content Include="Content\js\jquery.prettyPhoto.js" />
     <Content Include="Content\js\jquery.vide.js" />
     <Content Include="Content\js\map.js" />
@@ -313,6 +315,14 @@
     <Content Include="Content\js\retina.js" />
     <Content Include="Content\js\scroll.js" />
     <Content Include="Content\js\timeline.min.js" />
+    <Content Include="Content\lessons\Equipment.jpg" />
+    <Content Include="Content\lessons\Herding.jpg" />
+    <Content Include="Content\lessons\Hounds.jpg" />
+    <Content Include="Content\lessons\NonSporting.jpg" />
+    <Content Include="Content\lessons\Sporting.jpg" />
+    <Content Include="Content\lessons\Terrier.jpg" />
+    <Content Include="Content\lessons\Toy.jpg" />
+    <Content Include="Content\lessons\Working.jpg" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -468,6 +478,16 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\lessons\Aggression.pdf" />
+    <Content Include="Content\lessons\Barking.pdf" />
+    <Content Include="Content\lessons\CriticalDevelopmentPeriods.pdf" />
+    <Content Include="Content\lessons\Impact.pdf" />
+    <Content Include="Content\lessons\NormalBehavior.pdf" />
+    <Content Include="Content\lessons\OldAge.pdf" />
+    <Content Include="Content\lessons\PuppyPeriod.pdf" />
+    <Content Include="Content\lessons\SeasonalSafety.pdf" />
+    <Content Include="Content\lessons\Socialization.pdf" />
+    <Content Include="Content\lessons\VocabFlashCards.pdf" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
