@@ -54,10 +54,33 @@ namespace FinalProject.UI.MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "LessonId,LessonTitle,CourseId,Introduction,VideoURL,PdfFileName,IsActive")] Lesson lesson)
+        public ActionResult Create([Bind(Include = "LessonId,LessonTitle,CourseId,Introduction,VideoURL,PdfFileName,IsActive")] Lesson lesson, HttpPostedFileBase pdfFile)
         {
             if (ModelState.IsValid)
             {
+                string imgName = "Blank.pdf";
+                #region File Upload
+                if (pdfFile != null)
+                {
+                    imgName = pdfFile.FileName;
+
+                    string ext = imgName.Substring(imgName.LastIndexOf("."));
+
+                    string[] goodExts = { ".pdf", ".jpg", ".jpeg", ".png" };
+
+                    if (goodExts.Contains(ext.ToLower()) && (pdfFile.ContentLength <= 4194304))
+                    {
+                        imgName = Guid.NewGuid() + ext;
+                        pdfFile.SaveAs(Server.MapPath("~/Content/lessons/" + imgName));
+                    }
+                    else
+                    {
+                        imgName = "Blank.pdf";
+                    }
+                }
+                lesson.PdfFileName = imgName;
+                #endregion
+
                 db.Lessons.Add(lesson);
                 db.SaveChanges();
                 return RedirectToAction("Index");
