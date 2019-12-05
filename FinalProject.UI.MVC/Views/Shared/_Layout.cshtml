@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="~/Content/style.css">
 <!-- ALL VERSION CSS -->
 <link rel="stylesheet" href="~/Content/css/versions.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <!-- Responsive CSS -->
 <link rel="stylesheet" href="~/Content/css/responsive.css">
 <!-- FancyBox -->
@@ -30,6 +31,7 @@
 <link href="~/Content/CustomStyle.css" rel="stylesheet" />
 <!-- Modernizer for Portfolio -->
 <script src="~/Content/js/modernizer.js"></script>
+
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -125,7 +127,7 @@
     <!-- END LOADER -->
     <!-- Start header -->
     <header class="top-navbar">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background:#4c5a7d;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                     <img src="~/Content/images/WillowLogo.png" alt="Willow Logo" id="navbarLogo" style=" max-height: 100px; margin-right: -45px;" />
@@ -141,6 +143,7 @@
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Home")">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Courses")">Courses</a></li>
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Lessons")">Lessons</a></li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "CourseCompletions")">Courses Completed</a></li>
                         @*<li class="nav-item"><a class="nav-link" href="@Url.Action("Contact", "Home")">Contact</a></li>*@
 
                         @using Microsoft.AspNet.Identity
@@ -161,8 +164,8 @@
                                     </div>
                                 </li>
                                 @*<ul class="nav navbar-nav navbar-right">
-                                    <a class="hover-btn-new log" href="javascript:document.getElementById('logoutForm').submit()">Log Off</a>
-                                </ul>*@
+                                        <a class="hover-btn-new log" href="javascript:document.getElementById('logoutForm').submit()">Log Off</a>
+                                    </ul>*@
                             }
                         }
                     </ul>
@@ -204,7 +207,7 @@
             </div><!-- end container -->
         </div><!-- end section -->*@
     <footer class="footer">
-        @*<div class="container">*@
+        <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-xs-12">
                 <div class="widget clearfix">
@@ -253,16 +256,16 @@
             </div><!-- end col -->
 
         </div><!-- end row -->
-        @*</div>*@<!-- end container -->
+        </div><!-- end container -->
     </footer><!-- end footer -->
     <div class="copyrights">
-        @*<div class="container">*@
+        <div class="container">
         <div class="footer-distributed">
             <div class="footer-center">
                 <p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">SmartEDU</a> Design By : <a href="https://html.design/">html design</a></p>
             </div>
         </div>
-        @*</div>*@<!-- end container -->
+        </div><!-- end container -->
     </div><!-- end copyrights -->
     <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
     <!-- ALL JS FILES -->
@@ -271,6 +274,7 @@
     <script src="~/Content/js/custom.js"></script>
     <!-- jQuery  -->
     @*<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>*@
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <!-- FancyBox JS file -->
     <script src="~/Content/js/jquery.fancybox.min.js"></script>
     @RenderSection("scripts", required: false)

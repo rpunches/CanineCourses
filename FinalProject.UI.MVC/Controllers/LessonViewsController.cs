@@ -34,6 +34,7 @@ namespace FinalProject.UI.MVC.Controllers
             {
                 return HttpNotFound();
             }
+           
             return View(lessonView);
         }
 

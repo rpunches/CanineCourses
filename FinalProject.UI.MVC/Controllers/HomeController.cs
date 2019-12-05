@@ -28,7 +28,7 @@ namespace FinalProject.UI.MVC.Controllers
                 string message = $"Email from {cvm.Name} <br/>Email Address: {cvm.Email}<br/>Message:<br/>{cvm.Message}";
 
                 //what sends the email
-                MailMessage mm = new MailMessage("admin@rachelpunches.com", "rpunches@gmail.com", null, message);
+                MailMessage mm = new MailMessage("admin@rachelpunches.com", "aoffleash@gmail.com", null, message);
 
                 //mail message properties
                 //allow html formatting in email

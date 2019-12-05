@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using FinalProject.DATA.EF;
+using Microsoft.AspNet.Identity;
 
 namespace FinalProject.UI.MVC.Controllers
 {
@@ -57,6 +58,24 @@ namespace FinalProject.UI.MVC.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
+ 
+
+            //newView.UserId = User.Identity.GetUserId();
+            //newView.LessonId = lesson.LessonId;
+            //newView.DateViewed = DateTime.Now;
+            //db.LessonViews.Add(newView);
+            //db.SaveChanges();
+            //List<Lesson> viewedList = new List<Lesson>();
+            //Lesson view = new Lesson();
+            //foreach (Lesson item in viewedList)
+            //{
+            //    if (viewedList.Count() < db.LessonViews.Count())
+            //    {
+
+            //    }
+            //}
+
 
             ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "CourseName", courseCompletion.CourseId);
             ViewBag.UserId = new SelectList(db.UserDetails, "UserId", "FirstName", courseCompletion.UserId);

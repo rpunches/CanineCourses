@@ -1,4 +1,4 @@
-﻿body {
+﻿/*body {
     color: #4c5a7d;
 }
 
@@ -11,6 +11,13 @@
 #navbarLogo{
     max-height: 100px;
     margin-right: -45px;
+}
+.navbar{
+    background: #4c5a7d;
+}*/
+
+.section{
+    padding: 10px 0;
 }
 
 .tbMargin{
@@ -27,3 +34,15 @@
 .blog-item{
    margin: 10px;
 }
+
+/*Optimus img*/
+img.Optimus{
+    max-width: 85%;
+    float: right;
+}
+
+/*font-size: .8em;
+position: absolute;
+bottom: 0;
+left: 40px;
+right: 40px;*/
