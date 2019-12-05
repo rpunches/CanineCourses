@@ -127,8 +127,9 @@
     <header class="top-navbar">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
-                    <img src="~/Content/images/logo.png" alt="" />
+                <a class="navbar-brand" href="#">
+                    <img src="~/Content/images/WillowLogo.png" alt="Willow Logo" id="navbarLogo" style=" max-height: 100px; margin-right: -45px;" />
+                    <h1 style=" font-weight: bold; color: #eea412; display: inline; font-size:2em;">OffLeash Academy</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"></span>
@@ -143,7 +144,7 @@
                         @*<li class="nav-item"><a class="nav-link" href="@Url.Action("Contact", "Home")">Contact</a></li>*@
 
                         @using Microsoft.AspNet.Identity
-                        @if (User.IsInRole("Admin"))
+                        @if (Request.IsAuthenticated)
                         {
                             using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
                             {
@@ -155,13 +156,17 @@
                                         @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "dropdown-item" })
                                         <a class="dropdown-item" href="@Url.Action("Index", "UsersAdmin")">User Admin</a>
                                         <a class="dropdown-item" href="@Url.Action("Index", "RolesAdmin")">Roles Admin</a>
-
                                         <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Log Off</a>
+
                                     </div>
                                 </li>
+                                @*<ul class="nav navbar-nav navbar-right">
+                                    <a class="hover-btn-new log" href="javascript:document.getElementById('logoutForm').submit()">Log Off</a>
+                                </ul>*@
                             }
                         }
                     </ul>
+
                     <ul class="nav navbar-nav navbar-right">
                         <li><a class="hover-btn-new log" href="@Url.Action("Login", "Account")"><span>Login</span></a></li>
                     </ul>

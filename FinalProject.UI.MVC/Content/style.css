@@ -88,8 +88,8 @@ h6 {
 }
 
 h1 {
-    font-size: 24px
-}
+    font-size: 24px;
+   }
 
 h2 {
     font-size: 22px
@@ -466,7 +466,7 @@ a img.aligncenter {
 
 
 .top-navbar .bg-light{
-	background: #4c5a7d !important;
+	background: #4c5a7d; /*!important;*/
 }
 
 .top-navbar .navbar-light .navbar-nav .nav-link{
@@ -542,7 +542,7 @@ a img.aligncenter {
     width: 5px;
 	height: 5px;
 	border-radius: 50px;
-	border: none !important;
+	border: none; /*!important;*/
     opacity: 0;
     margin-right: -11px;
     background-color: #ffffff;
@@ -658,7 +658,7 @@ a img.aligncenter {
   width: 100%;
 }
 .navbar-right li a.hover-btn-new::after {
-  background: #ffffff !important;
+  background: #ffffff; /*!important;*/
   height: 100%;
   left: 0;
   top: 0;
@@ -771,7 +771,7 @@ a img.aligncenter {
 }
 
 .hover-btn-new::after {
-  background: #eea412 !important;
+  background: #eea412; /*!important;*/
   height: 100%;
   left: 0;
   top: 0;

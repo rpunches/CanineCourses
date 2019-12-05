@@ -1,4 +1,19 @@
-﻿.tbMargin{
+﻿body {
+    color: #4c5a7d;
+}
+
+.navbar-brand h1 {
+    font-weight: bold;
+    color: #eea412;
+    display: inline;
+}
+
+#navbarLogo{
+    max-height: 100px;
+    margin-right: -45px;
+}
+
+.tbMargin{
     margin-top: 25px;
     margin-bottom: 25px;
 }

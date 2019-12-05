@@ -154,6 +154,8 @@ namespace FinalProject.UI.MVC.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    //default role to User
+                    //UserManager.AddToRole(user.Id, "User");
                     #region Custom User Details
                     UserDetail newUserDeets = new UserDetail();
                     newUserDeets.UserId = user.Id;
@@ -164,11 +166,11 @@ namespace FinalProject.UI.MVC.Controllers
                     db.UserDetails.Add(newUserDeets);
                     db.SaveChanges();
                     #endregion
-                    var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
-                    ViewBag.Link = callbackUrl;
-                    return View("DisplayEmail");
+                    //var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    //await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
+                    //ViewBag.Link = callbackUrl;
+                    return View("Login");
                 }
                 AddErrors(result);
             }

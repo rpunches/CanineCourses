@@ -17,6 +17,7 @@ namespace FinalProject.UI.MVC.Controllers
         // GET: LessonViews
         public ActionResult Index()
         {
+
             var lessonViews = db.LessonViews.Include(l => l.Lesson).Include(l => l.UserDetail);
             return View(lessonViews.ToList());
         }
@@ -62,7 +63,7 @@ namespace FinalProject.UI.MVC.Controllers
             ViewBag.UserId = new SelectList(db.UserDetails, "UserId", "FirstName", lessonView.UserId);
             return View(lessonView);
         }
-
+        
         // GET: LessonViews/Edit/5
         public ActionResult Edit(int? id)
         {

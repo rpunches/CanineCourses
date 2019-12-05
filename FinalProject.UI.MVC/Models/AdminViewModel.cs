@@ -8,7 +8,7 @@ namespace FinalProject.UI.MVC.Models
     {
         public string Id { get; set; }
         [Required(AllowEmptyStrings = false)]
-        [Display(Name = "RoleName")]
+        [Display(Name = "Role")]
         public string Name { get; set; }
     }
 

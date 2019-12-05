@@ -9,13 +9,13 @@
     <div>
         <hr />
         <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.LessonTitle)
-            </dt>
+            @*<dt>
+            @Html.DisplayNameFor(model => model.LessonTitle)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.LessonTitle)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.LessonTitle)
+        </dd>*@
 
             <dt>
                 @Html.DisplayNameFor(model => model.Introduction)
@@ -24,30 +24,36 @@
             <dd>
                 @Html.DisplayFor(model => model.Introduction)
             </dd>
+          
 
-           @if (Model.VideoURL != null)
-           {
-                <dt>
-                    @Html.DisplayNameFor(model => model.VideoURL)
-                </dt>
+                @if (Model.VideoURL != null)
+                {
+                @*<dt>
+                @Html.DisplayNameFor(model => model.VideoURL)
+            </dt>*@
 
                 <dd>
-                    <a data-fancybox href="@Html.DisplayFor(model => model.VideoURL)"> @Html.DisplayFor(model => model.VideoURL)</a><br>
+                    <div class="blog-button">
+                        <a class="hover-btn-new orange" data-fancybox href="@Html.DisplayFor(model => model.VideoURL)" target="_blank" value="ViewVideo"><span>View Lesson<span></a>
+                    </div>
                 </dd>
-           }
-           @if (Model.PdfFileName != null)
-           {
+                }
 
-            <dt>
+                @if (Model.PdfFileName != null)
+                {
+
+                @*<dt>
                 @Html.DisplayNameFor(model => model.PdfFileName)
-            </dt>
+            </dt>*@
 
-            <dd>
-                <a href="~/Content/lessons/@Html.DisplayFor(model => model.PdfFileName)" data-fancybox="images" data-caption="@Html.DisplayNameFor(model => model.PdfFileName)">
-                   @Html.DisplayFor(model => model.PdfFileName)
-                </a>
-            </dd>
-           }
+                <dd>
+                    <div class="blog-button">
+                        <a class="hover-btn-new orange" href="~/Content/lessons/@Html.DisplayFor(model => model.PdfFileName)" target="_blank" value="ViewPDF"><span>View Lesson</span></a>
+                    </div>
+
+                </dd>
+            }
+       
             <dt>
                 @Html.DisplayNameFor(model => model.IsActive)
             </dt>

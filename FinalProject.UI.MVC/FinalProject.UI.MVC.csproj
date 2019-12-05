@@ -240,6 +240,7 @@
     <Content Include="Content\images\logo_04.png" />
     <Content Include="Content\images\logo_05.png" />
     <Content Include="Content\images\logo_06.png" />
+    <Content Include="Content\images\OptimusLogo.png" />
     <Content Include="Content\images\parallax_02.jpg" />
     <Content Include="Content\images\parallax_02.png" />
     <Content Include="Content\images\parallax_03.jpg" />
@@ -296,7 +297,9 @@
     <Content Include="Content\images\testi_01.png" />
     <Content Include="Content\images\testi_02.png" />
     <Content Include="Content\images\testi_03.png" />
+    <Content Include="Content\images\TonksLogo.png" />
     <Content Include="Content\images\version_soon.jpg" />
+    <Content Include="Content\images\WillowLogo.png" />
     <Content Include="Content\images\world-map.png" />
     <Content Include="Content\js\01-custom-places-example.js" />
     <Content Include="Content\js\all.js" />
@@ -515,7 +518,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\OldContact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -581,6 +584,8 @@
     <Content Include="Views\CourseCompletions\Details.cshtml" />
     <Content Include="Views\CourseCompletions\Edit.cshtml" />
     <Content Include="Views\CourseCompletions\Index.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\EmailConfirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
