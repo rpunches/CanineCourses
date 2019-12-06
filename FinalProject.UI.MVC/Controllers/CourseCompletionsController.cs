@@ -18,7 +18,13 @@ namespace FinalProject.UI.MVC.Controllers
         // GET: CourseCompletions
         public ActionResult Index()
         {
+            string userId = User.Identity.GetUserId();
+
+            //var myLessonViews = db.LessonViews.Where(x => x.UserId == userId);
+            //var lessons = db.Lessons.ToList();
             var courseCompletions = db.CourseCompletions.Include(c => c.Cours).Include(c => c.UserDetail);
+            
+
             return View(courseCompletions.ToList());
         }
 

@@ -83,34 +83,49 @@ namespace FinalProject.UI.MVC.Controllers
                 //}
                 #endregion
 
-                //Course completion should be created when the user has completed all lesson views associated to the course
+                #region Archive 2
+                ////Course completion should be created when the user has completed all lesson views associated to the course
 
-                //A count will tell you how many lesson views but there is a possibility of a logic error if you do NOT prevent
-                //multiple lesson views from being created for a single lesson for the same user. - Cared for with lesson not viewd on 44
+                ////A count will tell you how many lesson views but there is a possibility of a logic error if you do NOT prevent
+                ////multiple lesson views from being created for a single lesson for the same user. - Cared for with lesson not viewd on 44
 
-                //get the course id and number of lessons associated to the course
-                //var lessons = (from l in db.Lessons
-                //              where l.CourseId == lesson.CourseId
-                //              select l).Count();
+                ////get the course id and number of lessons associated to the course
+                ////var lessons = (from l in db.Lessons
+                ////              where l.CourseId == lesson.CourseId
+                ////              select l).Count();
 
-                var lessonsByTHISCourse = db.Lessons.Where(Course => Course.CourseId == lesson.CourseId).Count();
+                //var lessonsByTHISCourse = db.Lessons.Where(Course => Course.CourseId == lesson.CourseId).Count();
 
-                //get the number of lessons completed in the course by the user
-                //var user = (from u in db.LessonViews
-                //            where u.LessonViewId == lesson.LessonId
-                //            select u).Count();
+                ////get the number of lessons completed in the course by the user
+                ////var user = (from u in db.LessonViews
+                ////            where u.LessonViewId == lesson.LessonId
+                ////            select u).Count();
 
-                //var lessonsTotalUser = db.LessonViews.Where(Lesson => Lesson.LessonId == lesson.LessonId).OrderBy(Lesson => Lesson.UserId).Count();
+                ////var lessonsTotalUser = db.LessonViews.Where(Lesson => Lesson.LessonId == lesson.LessonId).OrderBy(Lesson => Lesson.UserId).Count();
 
-                var lessonsTotalUser = db.LessonViews.Where(lv => lv.LessonId == lesson.LessonId && lv.UserId == newView.UserId).Count();
+                //var lessonsTotalUser = db.LessonViews.Where(lv => lv.LessonId == lesson.LessonId && lv.UserId == newView.UserId).Count();
 
-                //if equal then create the course completed object
-                if (lessonsByTHISCourse == lessonsTotalUser)
+                ////if equal then create the course completed object
+                //if (lessonsByTHISCourse == lessonsTotalUser)
+                //{
+                //    CourseCompletion completedCourse = new CourseCompletion();
+                //    completedCourse.UserId = User.Identity.GetUserId();
+                //    completedCourse.CourseId = lesson.CourseId;
+                //    completedCourse.DateCompleted = DateTime.Now;
+                //    db.CourseCompletions.Add(completedCourse);
+                //    db.SaveChanges();
+                //}
+
+                #endregion
+
+                var totalViewed = db.LessonViews.Where(x => x.Lesson.CourseId == lesson.CourseId).Count();
+
+                if(totalViewed == lesson.Cours.Lessons.Count)
                 {
-                    CourseCompletion completedCourse = new CourseCompletion();
-                    completedCourse.UserId = User.Identity.GetUserId();
-                    completedCourse.CourseId = lesson.CourseId;
-                    completedCourse.DateCompleted = DateTime.Now;
+                    // Create CourseCompleted
+
+                    CourseCompletion completedCourse = new CourseCompletion() { UserId = User.Identity.GetUserId(), CourseId = lesson.CourseId, DateCompleted = DateTime.Now };
+
                     db.CourseCompletions.Add(completedCourse);
                     db.SaveChanges();
                 }
