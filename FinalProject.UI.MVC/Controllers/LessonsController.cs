@@ -4,6 +4,7 @@ using System;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 
@@ -118,20 +119,6 @@ namespace FinalProject.UI.MVC.Controllers
 
                 #endregion
 
-                var totalViewed = db.LessonViews.Where(x => x.Lesson.CourseId == lesson.CourseId).Count();
-
-                if(totalViewed == lesson.Cours.Lessons.Count)
-                {
-                    // Create CourseCompleted
-
-                    CourseCompletion completedCourse = new CourseCompletion() { UserId = User.Identity.GetUserId(), CourseId = lesson.CourseId, DateCompleted = DateTime.Now };
-
-                    db.CourseCompletions.Add(completedCourse);
-                    db.SaveChanges();
-                }
-
-            }
-
             #region Completion code attempt 1 archive
             //var complete = from c in db.LessonViews
             //               group c by c.LessonViewId into v
@@ -155,6 +142,52 @@ namespace FinalProject.UI.MVC.Controllers
             //    }
             //}
             #endregion
+
+                var totalViewed = db.LessonViews.Where(x => x.Lesson.CourseId == lesson.CourseId).Count();
+               
+
+                if(totalViewed == lesson.Cours.Lessons.Count)
+                {
+                    // Create CourseCompleted
+
+                    CourseCompletion completedCourse = new CourseCompletion() { UserId = User.Identity.GetUserId(), CourseId = lesson.CourseId, DateCompleted = DateTime.Now };
+
+                    db.CourseCompletions.Add(completedCourse);
+                    db.SaveChanges();
+
+                    string message = $"{lesson.Cours.CourseName} has been completed by {User.Identity.Name}";
+
+                    //what sends the email
+                    MailMessage mm = new MailMessage("admin@rachelpunches.com", "aoffleash@gmail.com", null, message);
+
+                    //mail message properties
+                    //allow html formatting in email
+                    mm.IsBodyHtml = true;
+                    //high priority
+                    mm.Priority = MailPriority.High;
+                    //respond to sender's email
+                    //mm.ReplyToList.Add(cvm.Email);
+
+                    //info from host - allow email to be sent
+                    SmtpClient client = new SmtpClient("mail.rachelpunches.com");
+                    //client credentials
+                    client.Credentials = new NetworkCredential("admin@rachelpunches.com", "Optimus!!11");
+
+                    // try/catch
+                    try
+                    {
+                        client.Send(mm);
+                    }
+                    catch (Exception ex)
+                    {
+                        ViewBag.CustomerMessage = $"We are sorry.  Your request could not be completed at this time.  Please try again later.<br/>Error Message: <br/>{ex.StackTrace}";
+                        return View();
+                    }
+                    //return confirmation to user
+                    //return View();
+                }
+
+            }
 
             return View(lesson);
         }
