@@ -171,7 +171,6 @@
                                     <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Account</a>
                                     <div class="dropdown-menu" aria-labelledby="dropdown-a">
                                         @Html.ActionLink("Hello " + User.Identity.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "dropdown-item" })
-                                        <a class="dropdown-item" href="@Url.Action("AccountPage", "Home")">My Account</a>
                                         @if (User.IsInRole("Admin"))
                                         {
                                             <a class="dropdown-item" href="@Url.Action("Index", "UsersAdmin")">User Admin</a>

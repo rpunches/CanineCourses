@@ -28,33 +28,48 @@
                 <th></th>
             </tr>*@
         <div class="row">
+
             @foreach (var item in Model)
             {
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="blog-item">
-                        <div class="blog-title">
-                            <h2>  <a href="@Url.Action("Details", new { id = item.LessonId })">  @Html.DisplayFor(modelItem => item.LessonTitle) </a></h2>
-                        </div>
-                        <div class="blog-desc">
-                            <p>  @Html.DisplayFor(modelItem => item.Introduction) </p>
-                        </div>
-                        <tr>
-                            <td>
-                                @if (User.IsInRole("Admin"))
+                if (item.IsActive == true)
+                {
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="blog-item">
+                            <div class="blog-title">
+                                <h2>@Html.DisplayFor(modelItem => item.LessonTitle)</h2>
+                            </div>
+                            <div class="blog-desc">
+                                @if (item.IsActive == true)
                                 {
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.LessonId }) @:|
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.LessonId })
+                                    <p>  @Html.DisplayFor(modelItem => item.Introduction) </p>
                                 }
-                                @*<a href="@Url.Action("Details", new { id = item.LessonId })" class="hover-btn-new orange"><span>View Lesson</span></a>*@
 
-                            </td>
-                        </tr>
+                            </div>
+                            <div class="row">
+                                <div class="big-tagline col-6">
+                                    <a href="@Url.Action("Details", new { id = item.LessonId })" class="hover-btn-new lessonBtn"><span>View Lesson</span></a>
+                                </div>
+                                <div class="editDelete col-6">
+                                    <tr>
+                                        <td>
+                                            @if (User.IsInRole("Admin"))
+                                            {
+                                                @Html.ActionLink("Edit", "Edit", new { id = item.LessonId }) @:|
+
+                                                @Html.ActionLink("Delete", "Delete", new { id = item.LessonId })
+                                            }
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
-                </div><!-- end col -->
-
-
-                                }
-
-        </div>
+                }
+          
+            }
+        </div><!-- end col -->
     </div>
 </div>
+

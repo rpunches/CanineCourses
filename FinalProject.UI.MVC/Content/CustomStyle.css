@@ -30,6 +30,20 @@
     min-height: 304px;
 }
 
+.course-item{
+    margin-bottom: 30px;
+}
+
+.activeBox {
+    position: absolute;
+    bottom: 80px;
+    font-style:italic;
+}
+
+.course-meta-bot ul {
+    text-align: right;
+}
+
 /*Blog Cards*/
 .blog-item{
    margin: 10px;
@@ -37,12 +51,84 @@
 
 /*Optimus img*/
 img.Optimus{
+    margin-top: 25px;
     max-width: 85%;
     float: right;
 }
 
-/*font-size: .8em;
-position: absolute;
-bottom: 0;
-left: 40px;
-right: 40px;*/
+/*Lesson Buttons*/
+.lessonBtn{
+    float:left;
+}
+
+.blog-item .big-tagline a {
+    font-size: 14px;
+}
+
+.hover-btn-new{
+    line-height: 35px;
+}
+
+.blog-item .big-tagline a {
+    background: none;
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    color: #333333;
+    font-weight: 500;
+}
+
+.big-tagline a.lessonBtn::after {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.big-tagline a.lessonBtn::before,
+.big-tagline a.lessonBtn::after {
+    background: #fff;
+    content: '';
+    position: absolute;
+    z-index: 1;
+}
+
+.big-tagline a.lessonBtn:hover span {
+    color: #eea412;
+}
+
+.lessonBtn::before {
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.lessonBtn::after {
+    background: #eea412 !important;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.lessonBtn span {
+    position: relative;
+    z-index: 2;
+}
+
+.lessonBtn:hover:after {
+    height: 0;
+    left: 50%;
+    top: 50%;
+    width: 0;
+}
+
+.blog-item .big-tagline a:hover {
+    color: #333333;
+}
+
+.editDelete {
+    text-align: right;
+    top: 20px;
+}
