@@ -25,16 +25,19 @@
                 @Html.DisplayFor(model => model.DateViewed)
             </dd>
             @*<dt>
-                @Html.DisplayNameFor(model => model.Lesson.LessonTitle)
-            </dt>
+                    @Html.DisplayNameFor(model => model.Lesson.LessonTitle)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Lesson.LessonTitle)
-            </dd>*@
+                <dd>
+                    @Html.DisplayFor(model => model.Lesson.LessonTitle)
+                </dd>*@
         </dl>
     </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.LessonViewId }) |
+        @if (User.IsInRole("Admin"))
+        {
+            @Html.ActionLink("Edit", "Edit", new { id = Model.LessonViewId }) @:|
+        }
         @Html.ActionLink("Back to Viewed Lessons", "Index")
     </p>
 </div>

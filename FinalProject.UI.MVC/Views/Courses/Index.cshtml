@@ -13,46 +13,48 @@
 
     <div class="container tbMargin">
         <h2>@ViewBag.Title</h2>
+        @if (User.IsInRole("Admin"))
+        {
+            <p>
+                @Html.ActionLink("Create a new Course", "Create")
+            </p>
+        }
+            <div class="row">
+                @foreach (var item in Model)
+                {
 
-        <p>
-            @Html.ActionLink("Create a new Course", "Create")
-        </p>
-        <div class="row">
-            @foreach (var item in Model)
-            {
 
 
-
-                <div class="col-lg-3 col-md-6 col-12">
-                    <div class="course-item">
-                        <div class="course-br">
-                            <div class="course-title">
-                                <h2>
-                                    <a href="@Url.Action("Details", new { id = item.CourseId })">
-                                        @Html.DisplayFor(modelItem => item.CourseName)
-                                    </a>
-                                </h2>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="course-item">
+                            <div class="course-br">
+                                <div class="course-title">
+                                    <h2>
+                                        <a href="@Url.Action("Details", new { id = item.CourseId })">
+                                            @Html.DisplayFor(modelItem => item.CourseName)
+                                        </a>
+                                    </h2>
+                                </div>
+                                <div class="course-desc">
+                                    @*@Html.DisplayNameFor(model => model.CourseDescription)*@
+                                    <p>  @Html.DisplayFor(modelItem => item.CourseDescription) </p>
+                                </div>
+                                @Html.DisplayNameFor(model => model.IsActive)
+                                @Html.DisplayFor(modelItem => item.IsActive)
                             </div>
-                            <div class="course-desc">
-                                @*@Html.DisplayNameFor(model => model.CourseDescription)*@
-                                <p>  @Html.DisplayFor(modelItem => item.CourseDescription) </p>
+                            <div class="course-meta-bot">
+                                <ul>
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <li>  @Html.ActionLink("Edit", "Edit", new { id = item.CourseId }) |</li>
+                                        <li> @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })</li>
+                                    }
+                                    </ul>
                             </div>
-                            @Html.DisplayNameFor(model => model.IsActive)
-                            @Html.DisplayFor(modelItem => item.IsActive)
                         </div>
-                        <div class="course-meta-bot">
-                            <ul>
-                                <li>  @Html.ActionLink("Edit", "Edit", new { id = item.CourseId }) |</li>
-                                <li>@Html.ActionLink("Details", "Details", new { id = item.CourseId }) |</li>
-                                <li> @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })</li>
-                            </ul>
-                        </div>
-                    </div>
-
-
-                </div><!-- end col -->
-            }
+                    </div><!-- end col -->
+                }
+            </div>
         </div>
-    </div>
 
 </div>

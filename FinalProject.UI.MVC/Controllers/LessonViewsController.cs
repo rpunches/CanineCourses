@@ -10,6 +10,7 @@ using FinalProject.DATA.EF;
 
 namespace FinalProject.UI.MVC.Controllers
 {
+    [Authorize(Roles = "Admin, Manager")]
     public class LessonViewsController : Controller
     {
         private CanineCoursesEntities db = new CanineCoursesEntities();

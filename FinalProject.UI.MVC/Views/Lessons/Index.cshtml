@@ -12,10 +12,12 @@
     </div>
     <div class="container tbMargin">
         <h2>@ViewBag.Title</h2>
-
-        <p>
-            @Html.ActionLink("Create a new Lesson", "Create") | @Html.ActionLink("Lessons Viewed", "Index", "LessonViews")
-        </p>
+        @if (User.IsInRole("Admin"))
+        {
+            <p>
+                @Html.ActionLink("Create a new Lesson", "Create") | @Html.ActionLink("Lessons Viewed", "Index", "LessonViews")
+            </p>
+        }
         @*<tr>
                 <th>
                     @Html.DisplayNameFor(model => model.LessonTitle)
@@ -38,9 +40,11 @@
                         </div>
                         <tr>
                             <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.LessonId }) |
-
-                                @Html.ActionLink("Delete", "Delete", new { id = item.LessonId })
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.LessonId }) @:|
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.LessonId })
+                                }
                                 @*<a href="@Url.Action("Details", new { id = item.LessonId })" class="hover-btn-new orange"><span>View Lesson</span></a>*@
 
                             </td>
@@ -49,8 +53,8 @@
                 </div><!-- end col -->
 
 
-            }
+                                }
 
         </div>
     </div>
-    </div>
+</div>

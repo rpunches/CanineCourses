@@ -14,6 +14,11 @@ namespace FinalProject.UI.MVC.Controllers
             return View();
         }
 
+        public ActionResult AccountPage()
+        {
+            return View();
+        }
+
         [HttpGet]
         public ActionResult Contact()
         {

@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity;
 
 namespace FinalProject.UI.MVC.Controllers
 {
+    [Authorize(Roles = "Admin, Manager")]
     public class CourseCompletionsController : Controller
     {
         private CanineCoursesEntities db = new CanineCoursesEntities();
