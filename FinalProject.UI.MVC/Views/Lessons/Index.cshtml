@@ -18,58 +18,70 @@
                 @Html.ActionLink("Create a new Lesson", "Create") | @Html.ActionLink("Lessons Viewed", "Index", "LessonViews")
             </p>
         }
-        @*<tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.LessonTitle)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Introduction)
-                </th>
-                <th></th>
-            </tr>*@
-        <div class="row">
+       
+            @*<tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LessonTitle)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Introduction)
+                    </th>
+                    <th></th>
+                </tr>*@
+            <div class="row">
 
-            @foreach (var item in Model)
-            {
-                if (item.IsActive == true)
+                @foreach (var item in Model)
                 {
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="blog-item">
-                            <div class="blog-title">
-                                <h2>@Html.DisplayFor(modelItem => item.LessonTitle)</h2>
-                            </div>
-                            <div class="blog-desc">
-                                @if (item.IsActive == true)
-                                {
-                                    <p>  @Html.DisplayFor(modelItem => item.Introduction) </p>
-                                }
-
-                            </div>
-                            <div class="row">
-                                <div class="big-tagline col-6">
-                                    <a href="@Url.Action("Details", new { id = item.LessonId })" class="hover-btn-new lessonBtn"><span>View Lesson</span></a>
+                    if (item.Cours.IsActive == true || User.IsInRole("Admin"))
+                    {
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="blog-item">
+                                <div class="blog-title">
+                                    <h2>@Html.DisplayFor(modelItem => item.LessonTitle)</h2>
                                 </div>
-                                <div class="editDelete col-6">
-                                    <tr>
-                                        <td>
-                                            @if (User.IsInRole("Admin"))
-                                            {
-                                                @Html.ActionLink("Edit", "Edit", new { id = item.LessonId }) @:|
+                                <div class="blog-desc">
 
-                                                @Html.ActionLink("Delete", "Delete", new { id = item.LessonId })
-                                            }
-                                        </td>
-                                    </tr>
+                                        <p>  @Html.DisplayFor(modelItem => item.Introduction) </p>
+                                    
+
+                                </div>
+                                <div class="row">
+
+
+                                    @if (Request.IsAuthenticated)
+                                    {
+                                        <div class="big-tagline col-6">
+                                            <a href="@Url.Action("Details", new { id = item.LessonId })" class="hover-btn-new lessonBtn"><span>View Lesson</span></a>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="big-tagline col-12">
+                                            <a href="@Url.Action("Login", "Account")" class="hover-btn-new lessonBtn"><span>Login to View Lesson</span></a>
+                                        </div>
+                                    }
+
+                                    <div class="editDelete col-6">
+                                        <tr>
+                                            <td>
+                                                @if (User.IsInRole("Admin"))
+                                                {
+                                                    @Html.ActionLink("Edit", "Edit", new { id = item.LessonId }) @:|
+
+                                                    @Html.ActionLink("Delete", "Delete", new { id = item.LessonId })
+                                                }
+                                            </td>
+                                        </tr>
+                                    </div>
                                 </div>
                             </div>
+
+
                         </div>
+                    }
 
-
-                    </div>
                 }
-          
-            }
-        </div><!-- end col -->
+            </div><!-- end col -->
     </div>
 </div>
 

@@ -21,7 +21,7 @@ namespace FinalProject.DATA.EF//.Metadata
         public string CourseDescription { get; set; }
 
         [Required(ErrorMessage = "*")]
-        [Display(Name = "Active")]
+        [Display(Name = "Available")]
         public bool IsActive { get; set; }
     }
     [MetadataType(typeof(CourseMetadata))]
@@ -82,7 +82,7 @@ namespace FinalProject.DATA.EF//.Metadata
         public string PdfFileName { get; set; }
 
         [Required(ErrorMessage = "*")]
-        [Display(Name = "Active")]
+        [Display(Name = "Available")]
         public bool IsActive { get; set; }
     }
     [MetadataType(typeof(LessonMetadata))]

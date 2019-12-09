@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using FinalProject.DATA.EF;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using FinalProject.DATA.EF;
 
 namespace FinalProject.UI.MVC.Controllers
 {
@@ -32,6 +29,10 @@ namespace FinalProject.UI.MVC.Controllers
             {
                 return HttpNotFound();
             }
+            //var courseLesson = (from l in db.Lessons
+            //                   where l.CourseId == course.CourseId
+            //                   select l).ToList();
+
             return View(course);
         }
 
@@ -90,6 +91,63 @@ namespace FinalProject.UI.MVC.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
+
+            #region Lesson and Course IsActive v1
+            //if (course.IsActive == false && lesson.CourseId == course.CourseId && lesson.IsActive == true)
+            //{
+            //    lesson.IsActive = false;
+            //}
+            //else if (course.IsActive == true && lesson.CourseId == course.CourseId && lesson.IsActive == false)
+            //{
+            //    lesson.IsActive = true;
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Edit/" + course.CourseId);
+            //}
+            #endregion
+            #region Lesson and Course IsActive v2
+            //if (lesson.CourseId == course.CourseId && course.IsActive == false && lesson.IsActive == true)
+            //{
+            //    lesson.IsActive = !lesson.IsActive;
+            //}
+            //else if (lesson.CourseId == course.CourseId && course.IsActive == true && lesson.IsActive == false)
+            //{
+            //    !lesson.IsActive = lesson.IsActive;
+            //}  
+            #endregion
+            #region Lesson and Course IsActive v3
+            //Lesson lesson = new Lesson();
+            //if (lesson.CourseId == course.CourseId && !course.IsActive)
+            //{
+            //    if (!course.IsActive)
+            //    {
+            //        lesson.IsActive = !lesson.IsActive;
+            //    }
+            //    else
+            //    {
+            //        lesson.IsActive = lesson.IsActive;
+            //    }
+            //}
+            //db.SaveChanges();
+            #endregion
+
+
+            var lesson = (from l in db.Lessons
+                         where l.CourseId == course.CourseId
+                         select l).Single();
+
+            if (course.IsActive == false)
+            {
+                lesson.IsActive = false;
+            }
+            else
+            {
+                lesson.IsActive = true;
+            }
+            db.SaveChanges();
+
             return View(course);
         }
 

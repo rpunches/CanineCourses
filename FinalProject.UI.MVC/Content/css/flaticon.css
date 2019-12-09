@@ -33,3 +33,15 @@
 .flaticon-study:before { content: "\f103"; }
 .flaticon-online:before { content: "\f104"; }
 .flaticon-years:before { content: "\f105"; }
+
+.flaticon-001-love:before {
+    content: "\e001";
+}
+
+.flaticon-002-veterinary:before {
+    content: "\e002";
+}
+
+.flaticon-003-dog:before {
+    content: "\e003";
+}

@@ -209,37 +209,15 @@
     <Content Include="Content\fonts\Flaticon.svg" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\images\about_02.jpg" />
-    <Content Include="Content\images\about_03.jpg" />
     <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\apple-touch-icon.png" />
     <Content Include="Content\images\arrow-left.svg" />
     <Content Include="Content\images\arrow-right.svg" />
-    <Content Include="Content\images\author.jpg" />
-    <Content Include="Content\images\avatar-01.jpg" />
-    <Content Include="Content\images\avatar-02.jpg" />
-    <Content Include="Content\images\avatar-03.jpg" />
-    <Content Include="Content\images\banner.jpg" />
     <Content Include="Content\images\bg.png" />
-    <Content Include="Content\images\blog_1.jpg" />
-    <Content Include="Content\images\blog_2.jpg" />
-    <Content Include="Content\images\blog_3.jpg" />
-    <Content Include="Content\images\blog_4.jpg" />
-    <Content Include="Content\images\blog_5.jpg" />
-    <Content Include="Content\images\blog_6.jpg" />
-    <Content Include="Content\images\blog_single.jpg" />
+    <Content Include="Content\images\dog.png" />
     <Content Include="Content\images\favicon.ico" />
-    <Content Include="Content\images\img-01.jpg" />
-    <Content Include="Content\images\img-02.jpg" />
-    <Content Include="Content\images\img-03.jpg" />
-    <Content Include="Content\images\img-04.jpg" />
+    <Content Include="Content\images\learning.jpg" />
     <Content Include="Content\images\logo.png" />
-    <Content Include="Content\images\logo_01.png" />
-    <Content Include="Content\images\logo_02.png" />
-    <Content Include="Content\images\logo_03.png" />
-    <Content Include="Content\images\logo_04.png" />
-    <Content Include="Content\images\logo_05.png" />
-    <Content Include="Content\images\logo_06.png" />
     <Content Include="Content\images\OptimusLogo.png" />
     <Content Include="Content\images\parallax_02.jpg" />
     <Content Include="Content\images\parallax_02.png" />
@@ -287,16 +265,6 @@
     <Content Include="Content\images\prettyPhoto\light_square\loader.gif" />
     <Content Include="Content\images\prettyPhoto\light_square\sprite.png" />
     <Content Include="Content\images\search-icon.png" />
-    <Content Include="Content\images\slider-01.jpg" />
-    <Content Include="Content\images\slider-02.jpg" />
-    <Content Include="Content\images\slider-03.jpg" />
-    <Content Include="Content\images\team-01.png" />
-    <Content Include="Content\images\team-02.png" />
-    <Content Include="Content\images\team-03.png" />
-    <Content Include="Content\images\team-04.png" />
-    <Content Include="Content\images\testi_01.png" />
-    <Content Include="Content\images\testi_02.png" />
-    <Content Include="Content\images\testi_03.png" />
     <Content Include="Content\images\TonksLogo.png" />
     <Content Include="Content\images\version_soon.jpg" />
     <Content Include="Content\images\WillowLogo.png" />
@@ -589,6 +557,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\LessonFilter\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

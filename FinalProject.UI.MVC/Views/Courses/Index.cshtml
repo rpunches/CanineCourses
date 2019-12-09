@@ -39,30 +39,28 @@
                                     @*@Html.DisplayNameFor(model => model.CourseDescription)*@
                                     <p>  @Html.DisplayFor(modelItem => item.CourseDescription) </p>
                                 </div>
-                                <div class="activeBox">
-                                    @if (item.IsActive == true)
-                                    {
-                                        <p>Course Available</p>
-                                    }
-                                    else
-                                    {
-                                        <p style="color: red;">Course Unavailable</p>
-                                    }
-
-                                    @*@Html.DisplayNameFor(model => model.IsActive)
-                                    @Html.DisplayFor(modelItem => item.IsActive)*@
-                                </div>
+                               
                             </div>
                             <div class="course-meta-bot">
-                                <ul>
+                                @if (item.IsActive == true)
+                                {
+                                    <p style="float:left;">Available</p>
+                                }
+                                else
+                                {
+                                    <p style="color: red; font-style:italic; float: left;">Unavailable</p>
+                                }
+                                <div class="textRight">
                                     @if (User.IsInRole("Admin"))
                                     {
-                                        <li>  @Html.ActionLink("Edit", "Edit", new { id = item.CourseId }) </li>
-                                        <li>|</li>
-                                        <li> @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })</li>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.CourseId }) @:|
+
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })
                                     }
-                                </ul>
+                                </div>
+                                <div class="clearfix"></div>
                             </div>
+                           
                         </div>
                     </div><!-- end col -->
                 }

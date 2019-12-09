@@ -8,10 +8,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Site Metas -->
-<title>SmartEDU - Education Responsive HTML5 Template</title>
-<meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="author" content="">
+<title>OffLeash Academy</title>
+<meta name="keywords" content="learning dog education">
+<meta name="description" content="Learning Management System final project">
+<meta name="author" content="Rachel Punches">
 <!-- Site Icons -->
 <link rel="shortcut icon" href="~/Content/images/favicon.ico" type="image/x-icon" />
 <link rel="apple-touch-icon" href="~/Content/images/apple-touch-icon.png">
@@ -118,12 +118,14 @@
 
     <!-- LOADER -->
     <div id="preloader">
-        <div class="loader-container">
-            <div class="progress-br float shadow">
-                <div class="progress__item"></div>
+            <div class="loader-container">
+                <div class="progress-br float shadow">
+                    <div class="progress__item"></div>
+                </div>
             </div>
         </div>
-    </div>
+
+
     <!-- END LOADER -->
     <!-- Start header -->
     <header class="top-navbar">
@@ -181,8 +183,8 @@
                                     </div>
                                 </li>
                                 @*<ul class="nav navbar-nav navbar-right">
-                        <a class="hover-btn-new log" href="javascript:document.getElementById('logoutForm').submit()">Log Off</a>
-                    </ul>*@
+                                        <a class="hover-btn-new log" href="javascript:document.getElementById('logoutForm').submit()">Log Off</a>
+                                    </ul>*@
                             }
                         }
                     </ul>
@@ -236,34 +238,20 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-xs-12">
-                    <div class="widget clearfix">
-                        <div class="widget-title">
-                            <h3>About US</h3>
-                        </div>
-                        <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis montes.</p>
-                        <div class="footer-right">
-                            <ul class="footer-links-soi">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-github"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                            </ul><!-- end links -->
-                        </div>
-                    </div><!-- end clearfix -->
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                    <div class="post-media fadeIn">
+                        <img src="~/Content/images/learning.jpg" alt="" class="img-fluid img-rounded">
+                    </div><!-- end media -->
                 </div><!-- end col -->
                 <div class="col-lg-4 col-md-4 col-xs-12">
                     <div class="widget clearfix">
                         <div class="widget-title">
-                            <h3>Information Link</h3>
+                            <h3>Staff Links</h3>
                         </div>
                         <ul class="footer-links">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Pricing</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="@Url.Action("Register", "Account")">Sign up for training!</a></li>
+                            <li><a href="@Url.Action("Index", "Courses")">Courses</a></li>
+                            <li><a href="@Url.Action("Index", "Lessons")">Lessons</a></li>
                         </ul><!-- end links -->
                     </div><!-- end clearfix -->
                 </div><!-- end col -->
@@ -271,13 +259,11 @@
                 <div class="col-lg-4 col-md-4 col-xs-12">
                     <div class="widget clearfix">
                         <div class="widget-title">
-                            <h3>Contact Details</h3>
+                            <h3>Have an idea for a course?</h3>
                         </div>
                         <ul class="footer-links">
-                            <li><a href="mailto:#">info@yoursite.com</a></li>
-                            <li><a href="#">www.yoursite.com</a></li>
-                            <li>PO Box 16122 Collins Street West Victoria 8007 Australia</li>
-                            <li>+61 3 8376 6284</li>
+                            <li><a href="@Url.Action("Contact", "Home")">Contact us and send us your training suggestions!</a></li>
+
                         </ul><!-- end links -->
                     </div><!-- end clearfix -->
                 </div><!-- end col -->
@@ -289,7 +275,10 @@
         <div class="container">
             <div class="footer-distributed">
                 <div class="footer-center">
-                    <p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">SmartEDU</a> Design By : <a href="https://html.design/">html design</a></p>
+                    <p class="footer-company-name">
+                        All Rights Reserved. &copy; 2018 <a href="#">SmartEDU</a> Design By : <a href="https://html.design/">html design</a>
+                        Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+                    </p>
                 </div>
             </div>
         </div><!-- end container -->

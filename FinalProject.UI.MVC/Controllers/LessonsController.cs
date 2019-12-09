@@ -18,6 +18,7 @@ namespace FinalProject.UI.MVC.Controllers
         public ActionResult Index()
         {
             var lessons = db.Lessons.Include(l => l.Cours);
+
             return View(lessons.ToList());
         }
 
@@ -274,6 +275,8 @@ namespace FinalProject.UI.MVC.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "CourseName", lesson.CourseId);
+
+        
             return View(lesson);
         }
 

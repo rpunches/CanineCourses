@@ -25,6 +25,14 @@
     margin-bottom: 25px;
 }
 
+.textRight{
+    text-align: right;
+}
+
+.clearfix{
+    margin-bottom: -15px;
+}
+
 /*Course Cards*/
 .course-br{
     min-height: 304px;
@@ -38,6 +46,12 @@
     position: absolute;
     bottom: 80px;
     font-style:italic;
+}
+
+.courseBox {
+    position: absolute;
+    bottom: 60px;
+    font-style: italic;
 }
 
 .course-meta-bot ul {
@@ -132,3 +146,9 @@ img.Optimus{
     text-align: right;
     top: 20px;
 }
+
+/*Footer*/
+.footer-distributed .footer-company-name, .footer-distributed .footer-company-name a {
+    color: #1f1f1f;
+}
+
