@@ -152,3 +152,28 @@ img.Optimus{
     color: #1f1f1f;
 }
 
+.footer {
+    padding: 90px 0 80px !important;
+    color: #cccccc;
+    background: #4c5a7d url(images/paw-bg-footer.png) center;
+}
+
+#footerTonks {
+    display: inline;
+    max-height: 194px;
+    margin-bottom: -68px;
+    margin-right: -25px;
+    z-index: 2;
+}
+
+#footerMus{
+display: inline;
+max-height: 247px;
+margin-left: -31px;
+z-index: 4;
+}
+
+#footerWillow {
+    max-width: 300px;
+    margin: 20px;
+}

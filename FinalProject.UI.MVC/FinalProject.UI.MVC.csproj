@@ -218,6 +218,7 @@
     <Content Include="Content\images\favicon.ico" />
     <Content Include="Content\images\learning.jpg" />
     <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\Optiflip.png" />
     <Content Include="Content\images\OptimusLogo.png" />
     <Content Include="Content\images\parallax_02.jpg" />
     <Content Include="Content\images\parallax_02.png" />
@@ -225,6 +226,8 @@
     <Content Include="Content\images\parallax_04.jpg" />
     <Content Include="Content\images\parallax_05.png" />
     <Content Include="Content\images\parallax_17.jpg" />
+    <Content Include="Content\images\paw-bg-footer.png" />
+    <Content Include="Content\images\pawprintpng.png" />
     <Content Include="Content\images\phonebg.png" />
     <Content Include="Content\images\prettyPhoto\dark_rounded\btnNext.png" />
     <Content Include="Content\images\prettyPhoto\dark_rounded\btnPrevious.png" />
