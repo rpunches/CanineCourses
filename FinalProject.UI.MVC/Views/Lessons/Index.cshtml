@@ -4,7 +4,7 @@
     ViewBag.Title = "Lessons";
 }
 
-<div class="row ">
+<div class="row">
     <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
         <div class="post-media wow fadeIn">
             <img src="~/Content/images/TonksLogo.png" alt="Optimus" class="img-fluid img-rounded Optimus">
@@ -28,13 +28,13 @@
                     </th>
                     <th></th>
                 </tr>*@
-            <div class="row">
+            <div class="row centerRow">
 
                 @foreach (var item in Model)
                 {
                     if (item.Cours.IsActive == true || User.IsInRole("Admin"))
                     {
-                        <div class="col-lg-4 col-md-6 col-12">
+                        <div class="col-lg-4 col-md-6 col-11">
                             <div class="blog-item">
                                 <div class="blog-title">
                                     <h2>@Html.DisplayFor(modelItem => item.LessonTitle)</h2>
