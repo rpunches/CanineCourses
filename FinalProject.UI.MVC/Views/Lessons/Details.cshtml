@@ -5,73 +5,45 @@
 }
 <div class="container tbMargin">
     <h2>@ViewBag.Title</h2>
-
-    <div>
+   
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cours.CourseName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cours.CourseName)
+        </dd>
         <hr />
-        <dl class="dl-horizontal">
-            @*<dt>
-                    @Html.DisplayNameFor(model => model.LessonTitle)
-                </dt>
 
+
+        <div class="row">
+            <div class="col-6">
                 <dd>
-                    @Html.DisplayFor(model => model.LessonTitle)
-                </dd>*@
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Introduction)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Introduction)
-            </dd>
-
-
-            @if (Model.VideoURL != null)
-            {
-                @*<dt>
-                        @Html.DisplayNameFor(model => model.VideoURL)
-                    </dt>*@
-
-                <dd>
-                    <div class="blog-button">
-                        <a class="hover-btn-new orange" data-fancybox href="@Html.DisplayFor(model => model.VideoURL)" target="_blank" value="ViewVideo"><span>View Video<span></a>
-                    </div>
+                    @Html.DisplayFor(model => model.Introduction)
                 </dd>
-            }
+                @if (Model.VideoURL != null)
+                {
 
-            @if (Model.PdfFileName != null)
-            {
+                    <dd>
+                        <div class="blog-button">
+                            <a class="hover-btn-new orange" data-fancybox href="@Html.DisplayFor(model => model.VideoURL)" target="_blank" value="ViewVideo"><span>View Video<span></a>
+                        </div>
+                    </dd>
+                }
 
-                @*<dt>
-                        @Html.DisplayNameFor(model => model.PdfFileName)
-                    </dt>*@
+                @if (Model.PdfFileName != null)
+                {
+                    <dd>
+                        <div class="blog-button">
+                            <a class="hover-btn-new orange" href="~/Content/lessons/@Html.DisplayFor(model => model.PdfFileName)" target="_blank" value="ViewPDF"><span>View File</span></a>
+                        </div>
+                    </dd>
+                }
+            </div>
+            <div class="col-5 lessonPic img-fluid img-rounded"></div>
+        </div>
+    </dl>
 
-                <dd>
-                    <div class="blog-button">
-                        <a class="hover-btn-new orange" href="~/Content/lessons/@Html.DisplayFor(model => model.PdfFileName)" target="_blank" value="ViewPDF"><span>View File</span></a>
-                    </div>
-
-                </dd>
-            }
-
-            <dt>
-                @Html.DisplayNameFor(model => model.IsActive)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.IsActive)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Cours.CourseName)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Cours.CourseName)
-            </dd>
-
-        </dl>
-    </div>
     <p>
         @if (User.IsInRole("Admin"))
         {
@@ -90,5 +62,37 @@
             },
 
         });
+
+        //var path = '/Content/images/lessons/',
+        //    imgs = ['lesson1.jpg', 'lesson2.jpg', 'lesson3.jpg', 'lesson4.jpg', 'lesson5.jpg', 'lesson6.jpg', 'lesson7.jpg', 'lesson8.jpg', 'lesson9.jpg', 'lesson10.jpg', 'lesson11.jpg', 'lesson12.jpg', 'lesson13.jpg', 'lesson14.jpg', 'lesson15.jpg', 'lesson16.jpg'],
+        //    i = Math.floor(Math.random() * imgs.length);
+        //$('.Mus').append("<img src='" + path + imgs[i] + "'>").hide().fadeIn(2000);
+       
+        function range(start, end) {
+            var myArray = [];
+            for (var i = start; i <= end; i += 1) {
+                myArray.push(i);
+            }
+            return myArray;
+        };
+        var path = '/Content/images/handlers/h',
+            //imgs = new Array();
+            imgs = range(1, 11),
+            i = Math.floor(Math.random() * imgs.length);
+        $('.lessonPic').append("<img src='" + path + i + ".jpg'>").hide().fadeIn(2000);
+
     </script>
 }
+
+
+@*<dt>
+        @Html.DisplayNameFor(model => model.LessonTitle)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.LessonTitle)
+    </dd>*@
+
+@*<dt>
+        @Html.DisplayNameFor(model => model.Introduction)
+    </dt>*@

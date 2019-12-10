@@ -156,7 +156,7 @@ namespace FinalProject.UI.MVC.Controllers
                     db.CourseCompletions.Add(completedCourse);
                     db.SaveChanges();
 
-                    string message = $"{lesson.Cours.CourseName} has been completed by {User.Identity.Name}";
+                    string message = $"A message from OffLeash Academy:<br/>{lesson.Cours.CourseName} has been completed by {User.Identity.Name}!<br/> <a>Click here</a> to view the lessons completed as part of the course!";
 
                     //what sends the email
                     MailMessage mm = new MailMessage("admin@rachelpunches.com", "aoffleash@gmail.com", null, message);

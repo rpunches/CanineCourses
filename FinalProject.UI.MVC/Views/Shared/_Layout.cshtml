@@ -131,9 +131,9 @@
     <header class="top-navbar">
         <nav class="navbar navbar-expand-lg navbar-light" style="background:#4c5a7d;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="~/Content/images/WillowLogo.png" alt="Willow Logo" id="navbarLogo" style=" max-height: 100px; margin-right: -45px;" />
-                    <h1 style=" font-weight: bold; color: #eea412; display: inline; font-size:2em;">OffLeash Academy</h1>
+                <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                    <img src="~/Content/images/WillowLogo.png" alt="Willow Logo" class="homeWillow" id="navbarLogo" style=" max-height: 100px; margin-right: -45px;" />
+                    <h1 style=" font-weight: bold; color: #eea412; display: inline; font-size:2em;" class="homeShadow">OffLeash Academy</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"></span>
@@ -143,25 +143,39 @@
                 <div class="collapse navbar-collapse" id="navbars-host">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Home")">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Courses")">Courses</a></li>
-
+                       <li class="nav-item dropdown">
+                        <a class="nav-link" href="@Url.Action("Index", "Courses")">Courses</a>
+                           @if (User.IsInRole("Admin")  || (User.IsInRole("Manager") || (User.IsInRole("User"))))
+                                               {
+                                        <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                                            @if (User.IsInRole("Admin"))
+                                            {
+                                    <a class="dropdown-item" href="@Url.Action("Create", "Courses")">Create a New Course</a>
+                                            }
+                                    <a class="dropdown-item" href="@Url.Action("Index", "CourseCompletions")">Courses Completed</a>
+                                </div>
+                                   }
+                        </li>
                         <li class="nav-item dropdown">
 
                             <a class="nav-link" href="@Url.Action("Index", "Lessons")">Lessons</a>
                             @if (User.IsInRole("Admin") || User.IsInRole("Manager"))
                             {
-                                <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                            <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <a class="dropdown-item" href="@Url.Action("Create", "Lessons")">Create a New Lesson</a>
+                                }
                                     <a class="dropdown-item" href="@Url.Action("Index", "LessonViews")">Viewed Lessons</a>
                                 </div>
                             }
 
                         </li>
 
-                        @if (User.IsInRole("Admin"))
+                        @*@if (User.IsInRole("Admin") || User.IsInRole("Manager") || User.IsInRole("User"))
                         {
                             <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "CourseCompletions")">Courses Completed</a></li>
-                            @*<li class="nav-item"><a class="nav-link" href="@Url.Action("Contact", "Home")">Contact</a></li>*@
-                        }
+                        }*@
                         @using Microsoft.AspNet.Identity
                         @if (Request.IsAuthenticated)
                         {
@@ -240,7 +254,8 @@
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                     <div class="post-media fadeIn">
-                        <img src="~/Content/images/learning.jpg" alt="Willow at Work" id="footerWillow" class="img-fluid img-rounded">
+                        <div class="img-fluid img-rounded Mus" id="footerWillow"></div>
+                        @*<img src="~/Content/images/learning.jpg" alt="Willow at Work" id="footerWillow" class="img-fluid img-rounded">*@
                     </div><!-- end media -->
                 </div><!-- end col -->
                 <div class="col-lg-4 col-md-4 col-xs-12">
@@ -264,7 +279,7 @@
                         <ul class="footer-links">
                             <li><a href="@Url.Action("Contact", "Home")">Contact us and send us your training suggestions!</a></li>
                           </ul><!-- end links -->
-                        <p><img src="~/Content/images/TonksLogo.png" alt="Tonks "id="footerTonks"/> <img src="~/Content/images/Optiflip.png" alt="Optimus" id="footerMus"/></p>
+                        <img src="~/Content/images/OptiTonks.png" alt="Tonks "id="footerMus"/>
                     </div><!-- end clearfix -->
                 </div><!-- end col -->
 
@@ -294,5 +309,19 @@
     <!-- FancyBox JS file -->
     <script src="~/Content/js/jquery.fancybox.min.js"></script>
     @RenderSection("scripts", required: false)
+    <script>
+        function range(start, end) {
+            var myArray = [];
+            for (var i = start; i <= end; i += 1) {
+                myArray.push(i);
+            }
+            return myArray;
+        };
+        var path = '/Content/images/lessons/lesson',
+            //imgs = new Array();
+            imgs = range(1, 10),
+            i = Math.floor(Math.random() * imgs.length);
+        $('.Mus').append("<img src='" + path + i + ".jpg'>").hide().fadeIn(2000);
+    </script>
 </body>
 </html>

@@ -155,7 +155,7 @@ namespace FinalProject.UI.MVC.Controllers
                 if (result.Succeeded)
                 {
                     //default role to User
-                    //UserManager.AddToRole(user.Id, "User");
+                    UserManager.AddToRole(user.Id, "User");
                     #region Custom User Details
                     UserDetail newUserDeets = new UserDetail();
                     newUserDeets.UserId = user.Id;

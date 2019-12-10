@@ -11,7 +11,7 @@ using Microsoft.AspNet.Identity;
 
 namespace FinalProject.UI.MVC.Controllers
 {
-    [Authorize(Roles = "Admin, Manager")]
+    
     public class CourseCompletionsController : Controller
     {
         private CanineCoursesEntities db = new CanineCoursesEntities();
@@ -20,6 +20,31 @@ namespace FinalProject.UI.MVC.Controllers
         public ActionResult Index()
         {
             string userId = User.Identity.GetUserId();
+
+            #region courseCompletions per User v1
+            //if (User.IsInRole("User"))
+            //{
+            //    var currentUser = User.Identity.GetUserId();
+            //    var myId = (from c in db.UserDetails
+            //                     where c.UserId == currentUser
+            //                     select c);
+            //    //var myCourses = from c in db.CourseCompletions
+            //    //                where c.UserId == currentUser
+            //    //                select c;
+
+            //    var completed = db.CourseCompletions.Include(i => i.Cours).Include(i => i.UserDetail);
+            //    foreach (var course in db.CourseCompletions)
+            //    {
+            //        foreach (var id in myId)
+            //        {
+            //            if (course.UserId == id.UserId)
+            //            {
+            //                return View(completed.ToList());
+            //            }
+            //        }
+            //    }
+            //}
+            #endregion
 
             //var myLessonViews = db.LessonViews.Where(x => x.UserId == userId);
             //var lessons = db.Lessons.ToList();
@@ -45,6 +70,7 @@ namespace FinalProject.UI.MVC.Controllers
         }
 
         // GET: CourseCompletions/Create
+        [Authorize(Roles = "Admin, Manager")]
         public ActionResult Create()
         {
             ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "CourseName");
@@ -90,6 +116,7 @@ namespace FinalProject.UI.MVC.Controllers
         }
 
         // GET: CourseCompletions/Edit/5
+        [Authorize(Roles = "Admin, Manager")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -109,6 +136,7 @@ namespace FinalProject.UI.MVC.Controllers
         // POST: CourseCompletions/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin, Manager")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "CourseCompletionId,UserId,CourseId,DateCompleted")] CourseCompletion courseCompletion)
@@ -125,6 +153,7 @@ namespace FinalProject.UI.MVC.Controllers
         }
 
         // GET: CourseCompletions/Delete/5
+        [Authorize(Roles = "Admin, Manager")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -140,6 +169,7 @@ namespace FinalProject.UI.MVC.Controllers
         }
 
         // POST: CourseCompletions/Delete/5
+        [Authorize(Roles = "Admin, Manager")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<FinalProject.DATA.EF.LessonView>
 
 @{
-    ViewBag.Title = "Lessons Viewed";
+    ViewBag.Title = "Viewed Lessons";
 }
 <div class="container tbMargin">
     <h2>@ViewBag.Title</h2>
@@ -31,9 +31,9 @@
         {
             <tr>
                 <td>
-                    <a href="@Url.Action("Details", "LessonViews")">
+                    @*<a href="@Url.Action("Details", "LessonViews")">*@
                         @Html.DisplayFor(modelItem => item.UserDetail.FullName)
-                    </a>
+                    @*</a>*@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Lesson.LessonTitle)

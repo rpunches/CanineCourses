@@ -1,53 +1,61 @@
 ﻿@model IEnumerable<FinalProject.DATA.EF.CourseCompletion>
 
 @{
-    ViewBag.Title = "Course Completions";
+    ViewBag.Title = "Courses Completed";
 }
-<div class="container tbMargin">
-    <h2>@ViewBag.Title</h2>
-    @if (User.IsInRole("Admin"))
-    {
-        <p>
-            @Html.ActionLink("Add a Completed Course", "Create")
-        </p>
-    }
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UserDetail.FullName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cours.CourseName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateCompleted)
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
+<dov class="row">
+    <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
+        <div class="post-media fadeIn">
+            <img src="~/Content/images/gradLogo.png" alt="Optimus" class="img-fluid img-rounded Optimus">
+        </div>
+    </div>
+    <div class="container tbMargin">
+        <h2>@ViewBag.Title</h2>
+        @if (User.IsInRole("Admin"))
         {
-            <tr>
-                <td>
-                    <a href="@Url.Action("Details", "CourseCompletions")">
-                        @Html.DisplayFor(modelItem => item.UserDetail.FullName)
-                    </a>
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cours.CourseName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateCompleted)
-                </td>
-                <td>
-                    @if (User.IsInRole("Admin"))
-                    {
-                        @Html.ActionLink("Edit", "Edit", new { id = item.CourseCompletionId }) @:|
-                        @Html.ActionLink("Delete", "Delete", new { id = item.CourseCompletionId })
-                    }
-                </td>
-            </tr>
+            <p>
+                @Html.ActionLink("Add a Completed Course", "Create")
+            </p>
         }
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserDetail.FullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cours.CourseName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateCompleted)
+                </th>
+                <th></th>
+            </tr>
 
-    </table>
-</div>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @*<a href="@Url.Action("Details", "CourseCompletions")">*@
+                            @Html.DisplayFor(modelItem => item.UserDetail.FullName)
+                        @*</a>*@
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cours.CourseName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateCompleted)
+                    </td>
+                    <td>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            @Html.ActionLink("Edit", "Edit", new { id = item.CourseCompletionId }) @:|
+                            @Html.ActionLink("Delete", "Delete", new { id = item.CourseCompletionId })
+                        }
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</dov>

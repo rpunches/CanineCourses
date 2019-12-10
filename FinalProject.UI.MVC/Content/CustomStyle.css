@@ -15,9 +15,12 @@
 .navbar{
     background: #4c5a7d;
 }*/
+p {
+    filter: drop-shadow(3px 3px 2px lightgray);
+    }
 
-.section{
-    padding: 10px 0;
+h1, h2, h3, h4 {
+    filter: drop-shadow(3px 3px 3px #a8a8a8);
 }
 
 .tbMargin{
@@ -33,12 +36,26 @@
     margin-bottom: -15px;
 }
 
+.newCheck{
+    padding-left: 0;
+}
+
+.checkbox{
+    margin-left:15px;
+}
+
+/*Navigation*/
+.nav-item {
+    filter: drop-shadow(3px 3px 5px #202020);
+}
+
 /*Course Cards*/
 .course-br{
     min-height: 304px;
 }
 
-.course-item{
+.course-item {
+    filter: drop-shadow(5px 5px 7px #c8c8c8);
     margin-bottom: 30px;
 }
 
@@ -59,8 +76,9 @@
 }
 
 /*Blog Cards*/
-.blog-item{
-   margin: 10px;
+.blog-item {
+    margin: 10px;
+    filter: drop-shadow(5px 5px 7px #c8c8c8);
 }
 
 /*Optimus img*/
@@ -70,17 +88,35 @@ img.Optimus{
     float: right;
 }
 
+/*Home Page Willow img*/
+.homeWillow {
+    filter: drop-shadow(3px 5px 5px #202020);
+}
+
+.homeWillow2, .Optimus {
+    filter: drop-shadow(5px 5px 7px #a8a8a8);
+}
+
+.homeShadow {
+    filter: drop-shadow(5px 5px 6px #202020);
+}
+
 /*Lesson Buttons*/
-.lessonBtn{
-    float:left;
+.lessonBtn {
+    float: left;
 }
 
 .blog-item .big-tagline a {
     font-size: 14px;
 }
 
-.hover-btn-new{
+.hover-btn-new {
     line-height: 35px;
+    filter: drop-shadow(2px 2px 6px gray);
+}
+
+a.hover-btn-new.log {
+    filter: drop-shadow(2px 2px 7px #202020);
 }
 
 .blog-item .big-tagline a {
@@ -147,6 +183,12 @@ img.Optimus{
     top: 20px;
 }
 
+/*Lesson Pictures*/
+.lessonPic img, .lessonPic{
+    max-height:350px;
+    text-align:center;
+}
+
 /*Footer*/
 .footer-distributed .footer-company-name, .footer-distributed .footer-company-name a {
     color: #1f1f1f;
@@ -158,22 +200,28 @@ img.Optimus{
     background: #4c5a7d url(images/paw-bg-footer.png) center;
 }
 
-#footerTonks {
-    display: inline;
-    max-height: 194px;
-    margin-bottom: -68px;
-    margin-right: -25px;
-    z-index: 2;
+.widget{
+    text-align:center;
 }
 
-#footerMus{
-display: inline;
-max-height: 247px;
-margin-left: -31px;
-z-index: 4;
+.widget-title, .footer-links{
+    text-align:left;
+}
+
+.footer .widget-title h3 {
+    filter: drop-shadow(3px 3px 5px #202020);
+}
+
+.footer-links a {
+    filter: drop-shadow(5px 5px 7px black);
+}
+    #footerMus {
+    max-height: 275px;
+    filter: drop-shadow(4px 4px 9px #202020)
 }
 
 #footerWillow {
+    filter: drop-shadow(5px 5px 7px #202020);
     max-width: 300px;
     margin: 20px;
 }
