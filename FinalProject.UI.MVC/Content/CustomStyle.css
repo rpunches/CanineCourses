@@ -15,11 +15,34 @@
 .navbar{
     background: #4c5a7d;
 }*/
+/*#bgPic {
+    background: url("images/grassBG2.jpg") no-repeat center center fixed;
+    background-size: cover;
+}*/
+#myVideo {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+   
+}
+
+
 p {
     filter: drop-shadow(3px 3px 2px lightgray);
     }
 
-h1, h2, h3, h4 {
+h1, h3 {
+    filter: drop-shadow(3px 3px 3px #a8a8a8);
+}
+
+h2 {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-size: 18px;
+    /* color: #eea412; */
     filter: drop-shadow(3px 3px 3px #a8a8a8);
 }
 
@@ -44,188 +67,264 @@ h1, h2, h3, h4 {
     margin-left:15px;
 }
 
-.centerRow{
+/*.centerRow{
     justify-content: center;
+}*/
+
+
+    .section.lb {
+        background: none;
+    }
+
+    .section-title p {
+        color: white;
+        filter: drop-shadow(3px 3px 2px black);
+    }
+
+    div.container.tbMargin > h2 {
+        color: white;
+        filter: drop-shadow(3px 3px 3px black);
+    }
+
+    div.container.tbMargin p a {
+        color: white;
+        filter: drop-shadow(3px 3px 2px black);
+    }
+
+    /*Navigation*/
+    .nav-item {
+        filter: drop-shadow(0px 2px 5px #383527);
+    }
+
+    /*Course Cards*/
+    .course-br {
+        min-height: 304px;
+    }
+
+    .course-item {
+        filter: drop-shadow(5px 5px 7px black);
+        margin-bottom: 30px;
+        opacity: 90%;
+    }
+
+    .activeBox {
+        position: absolute;
+        bottom: 80px;
+        font-style: italic;
+    }
+
+    .courseBox {
+        position: absolute;
+        bottom: 60px;
+        font-style: italic;
+    }
+
+    .course-meta-bot ul {
+        text-align: right;
+    }
+
+    .course-meta-bot, .course-br {
+        border: none;
+    }
+
+    /*Blog Cards*/
+    .blog-item {
+        margin: 10px;
+        filter: drop-shadow(5px 5px 7px black);
+        opacity: 90%;
+    }
+
+    /*Optimus img*/
+    img.Optimus {
+        margin-top: 25px;
+        max-width: 85%;
+        float: right;
+    }
+
+    /*Home Page Willow img*/
+    .homeWillow {
+        filter: drop-shadow(3px 5px 5px #202020);
+    }
+
+    .homeWillow2, .Optimus {
+        filter: drop-shadow(5px 5px 7px black);
+    }
+
+    .homeShadow {
+        filter: drop-shadow(5px 5px 6px #383527);
+    }
+
+    .message-box h4 {
+        filter: drop-shadow(3px 3px 3px black);
+        font-size: 24px;
+        /*text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;*/
+    }
+
+    div.message-box h2 {
+        font-size: 38px;
+        font-weight: 600;
+        padding: 0 0 10px;
+        margin: 0;
+        line-height: 62px;
+        margin-top: 0;
+        text-transform: none;
+        color: black;
+        filter: drop-shadow(3px 3px 3px #a8a8a8);
+    }
+
+    /*Lesson Buttons*/
+    .lessonBtn {
+        float: left;
+    }
+
+    .blog-item .big-tagline a {
+        font-size: 14px;
+    }
+
+    .hover-btn-new {
+        line-height: 35px;
+        filter: drop-shadow(2px 2px 6px gray);
+    }
+
+    a.hover-btn-new.log {
+        filter: drop-shadow(2px 2px 7px #202020);
+    }
+
+    .blog-item .big-tagline a {
+        background: none;
+        position: relative;
+        display: inline-block;
+        font-size: 14px;
+        color: #333333;
+        font-weight: 500;
+    }
+
+    .big-tagline a.lessonBtn::after {
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+
+    .big-tagline a.lessonBtn::before,
+    .big-tagline a.lessonBtn::after {
+        background: #fff;
+        content: '';
+        position: absolute;
+        z-index: 1;
+    }
+
+    .big-tagline a.lessonBtn:hover span {
+        color: #eea412;
+    }
+
+    .lessonBtn::before {
+        height: 100%;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    .lessonBtn::after {
+        background: #eea412 !important;
+        height: 100%;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    .lessonBtn span {
+        position: relative;
+        z-index: 2;
+    }
+
+    .lessonBtn:hover:after {
+        height: 0;
+        left: 50%;
+        top: 50%;
+        width: 0;
+    }
+
+    .blog-item .big-tagline a:hover {
+        color: #333333;
+    }
+
+    .editDelete {
+        text-align: right;
+        top: 20px;
+    }
+
+    .lessonMargin {
+        margin-top: 75px;
+    }
+
+    .blog-title > h2 {
+        margin: 0 0 15px 0;
+    }
+    /*Lesson Pictures*/
+.lessonPic img, .lessonPic {
+    filter: drop-shadow(3px 3px 7px #a8a8a8);
+    max-height: 350px;
+    text-align: center;
 }
 
-/*Navigation*/
-.nav-item {
+
+    .dimPage {
+        background-color: white;
+        opacity: 75%;
+        padding: 1em 2em 1em 2em;
+    }
+
+    .loginPage {
+        background-color: white;
+        opacity: 90%;
+        padding: 2em;
+    }
+
+    /*Footer*/
+    .footer-distributed .footer-company-name, .footer-distributed .footer-company-name a {
+        color: #1f1f1f;
+    }
+
+    .footer {
+        padding: 90px 0 0 !important;
+        color: #cccccc;
+        background: none; /*#4c5a7d url(images/paw-bg-footer.png) center;*/
+    }
+
+    .widget {
+        text-align: center;
+    }
+
+    .widget-title, .footer-links {
+        text-align: left;
+    }
+
+        /*.footer .widget-title h3 {
+    font-size: 41px;
     filter: drop-shadow(3px 3px 5px #202020);
-}
+}*/
 
-/*Course Cards*/
-.course-br{
-    min-height: 304px;
-}
+        .footer-links a {
+            color: white;
+            filter: drop-shadow(3px 3px 2px black);
+        }
 
-.course-item {
-    filter: drop-shadow(5px 5px 7px #c8c8c8);
-    margin-bottom: 30px;
-}
+    ul.footer-links li {
+        font-size: 1.25em;
+    }
 
-.activeBox {
-    position: absolute;
-    bottom: 80px;
-    font-style:italic;
-}
-
-.courseBox {
-    position: absolute;
-    bottom: 60px;
-    font-style: italic;
-}
-
-.course-meta-bot ul {
-    text-align: right;
-}
-
-/*Blog Cards*/
-.blog-item {
-    margin: 10px;
-    filter: drop-shadow(5px 5px 7px #c8c8c8);
-}
-
-/*Optimus img*/
-img.Optimus{
-    margin-top: 25px;
-    max-width: 85%;
-    float: right;
-}
-
-/*Home Page Willow img*/
-.homeWillow {
-    filter: drop-shadow(3px 5px 5px #202020);
-}
-
-.homeWillow2, .Optimus {
-    filter: drop-shadow(5px 5px 7px #a8a8a8);
-}
-
-.homeShadow {
-    filter: drop-shadow(5px 5px 6px #202020);
-}
-
-/*Lesson Buttons*/
-.lessonBtn {
-    float: left;
-}
-
-.blog-item .big-tagline a {
-    font-size: 14px;
-}
-
-.hover-btn-new {
-    line-height: 35px;
-    filter: drop-shadow(2px 2px 6px gray);
-}
-
-a.hover-btn-new.log {
-    filter: drop-shadow(2px 2px 7px #202020);
-}
-
-.blog-item .big-tagline a {
-    background: none;
-    position: relative;
-    display: inline-block;
-    font-size: 14px;
-    color: #333333;
-    font-weight: 500;
-}
-
-.big-tagline a.lessonBtn::after {
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-.big-tagline a.lessonBtn::before,
-.big-tagline a.lessonBtn::after {
-    background: #fff;
-    content: '';
-    position: absolute;
-    z-index: 1;
-}
-
-.big-tagline a.lessonBtn:hover span {
-    color: #eea412;
-}
-
-.lessonBtn::before {
-    height: 100%;
-    left: 0;
-    top: 0;
-    width: 100%;
-}
-
-.lessonBtn::after {
-    background: #eea412 !important;
-    height: 100%;
-    left: 0;
-    top: 0;
-    width: 100%;
-}
-
-.lessonBtn span {
-    position: relative;
-    z-index: 2;
-}
-
-.lessonBtn:hover:after {
-    height: 0;
-    left: 50%;
-    top: 50%;
-    width: 0;
-}
-
-.blog-item .big-tagline a:hover {
-    color: #333333;
-}
-
-.editDelete {
-    text-align: right;
-    top: 20px;
-}
-
-/*Lesson Pictures*/
-.lessonPic img, .lessonPic{
-    max-height:350px;
-    text-align:center;
-}
-
-/*Footer*/
-.footer-distributed .footer-company-name, .footer-distributed .footer-company-name a {
-    color: #1f1f1f;
-}
-
-.footer {
-    padding: 90px 0 80px !important;
-    color: #cccccc;
-    background: #4c5a7d url(images/paw-bg-footer.png) center;
-}
-
-.widget{
-    text-align:center;
-}
-
-.widget-title, .footer-links{
-    text-align:left;
-}
-
-.footer .widget-title h3 {
-    filter: drop-shadow(3px 3px 5px #202020);
-}
-
-.footer-links a {
-    filter: drop-shadow(5px 5px 7px black);
-}
     #footerMus {
-    max-height: 275px;
-    filter: drop-shadow(4px 4px 9px #202020)
-}
+        /*max-height: 275px;*/
+        filter: drop-shadow(4px 4px 9px #202020)
+    }
 
-#footerWillow {
-    filter: drop-shadow(5px 5px 7px #202020);
-    max-width: 300px;
-    margin: 20px;
-}
+    #footerWillow {
+        filter: drop-shadow(5px 5px 7px #202020);
+        max-width: 300px;
+        margin: 20px;
+    }
+
+    p.footer-company-name {
+        filter: none;
+    }

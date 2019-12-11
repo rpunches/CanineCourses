@@ -209,6 +209,8 @@
     <Content Include="Content\fonts\Flaticon.svg" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\gardenField.mp4" />
+    <Content Include="Content\grasswind2.mp4" />
     <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\apple-touch-icon.png" />
     <Content Include="Content\images\arrow-left.svg" />
@@ -217,6 +219,8 @@
     <Content Include="Content\images\dog.png" />
     <Content Include="Content\images\favicon.ico" />
     <Content Include="Content\images\gradLogo.png" />
+    <Content Include="Content\images\grassBG.jpg" />
+    <Content Include="Content\images\grassBG2.jpg" />
     <Content Include="Content\images\handlers\h0.jpg" />
     <Content Include="Content\images\handlers\h1.jpg" />
     <Content Include="Content\images\handlers\h10.JPG" />
@@ -585,7 +589,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\LessonFilter\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

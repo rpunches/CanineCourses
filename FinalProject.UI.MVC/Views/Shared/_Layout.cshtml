@@ -12,6 +12,8 @@
 <meta name="keywords" content="learning dog education">
 <meta name="description" content="Learning Management System final project">
 <meta name="author" content="Rachel Punches">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Merienda:700&display=swap" rel="stylesheet">
 <!-- Site Icons -->
 <link rel="shortcut icon" href="~/Content/images/favicon.ico" type="image/x-icon" />
 <link rel="apple-touch-icon" href="~/Content/images/apple-touch-icon.png">
@@ -37,7 +39,10 @@
   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body class="host_version">
+<body class="host_version" id="bgPic">
+    <video autoplay muted loop id="myVideo">
+        <source src="~/Content/gardenField.mp4" type="video/mp4">
+    </video>
     <!-- Modal -->
     @*<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -118,18 +123,18 @@
 
     <!-- LOADER -->
     <div id="preloader">
-            <div class="loader-container">
-                <div class="progress-br float shadow">
-                    <div class="progress__item"></div>
-                </div>
+        <div class="loader-container">
+            <div class="progress-br float shadow">
+                <div class="progress__item"></div>
             </div>
         </div>
+    </div>
 
 
     <!-- END LOADER -->
     <!-- Start header -->
     <header class="top-navbar">
-        <nav class="navbar navbar-expand-lg navbar-light" style="background:#4c5a7d;">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background:none;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="@Url.Action("Index", "Home")">
                     <img src="~/Content/images/WillowLogo.png" alt="Willow Logo" class="homeWillow" id="navbarLogo" style=" max-height: 100px; margin-right: -45px;" />
@@ -143,29 +148,29 @@
                 <div class="collapse navbar-collapse" id="navbars-host">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Home")">Home</a></li>
-                       <li class="nav-item dropdown">
-                        <a class="nav-link" href="@Url.Action("Index", "Courses")">Courses</a>
-                           @if (User.IsInRole("Admin")  || (User.IsInRole("Manager") || (User.IsInRole("User"))))
-                                               {
-                                        <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                                            @if (User.IsInRole("Admin"))
-                                            {
-                                    <a class="dropdown-item" href="@Url.Action("Create", "Courses")">Create a New Course</a>
-                                            }
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="@Url.Action("Index", "Courses")">Courses</a>
+                            @if (User.IsInRole("Admin") || (User.IsInRole("Manager") || (User.IsInRole("User"))))
+                            {
+                                <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <a class="dropdown-item" href="@Url.Action("Create", "Courses")">Create a New Course</a>
+                                    }
                                     <a class="dropdown-item" href="@Url.Action("Index", "CourseCompletions")">Courses Completed</a>
                                 </div>
-                                   }
+                            }
                         </li>
                         <li class="nav-item dropdown">
 
                             <a class="nav-link" href="@Url.Action("Index", "Lessons")">Lessons</a>
                             @if (User.IsInRole("Admin") || User.IsInRole("Manager"))
                             {
-                            <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                                @if (User.IsInRole("Admin"))
-                                {
-                                    <a class="dropdown-item" href="@Url.Action("Create", "Lessons")">Create a New Lesson</a>
-                                }
+                                <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <a class="dropdown-item" href="@Url.Action("Create", "Lessons")">Create a New Lesson</a>
+                                    }
                                     <a class="dropdown-item" href="@Url.Action("Index", "LessonViews")">Viewed Lessons</a>
                                 </div>
                             }
@@ -173,9 +178,9 @@
                         </li>
 
                         @*@if (User.IsInRole("Admin") || User.IsInRole("Manager") || User.IsInRole("User"))
-                        {
-                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "CourseCompletions")">Courses Completed</a></li>
-                        }*@
+                            {
+                                <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "CourseCompletions")">Courses Completed</a></li>
+                            }*@
                         @using Microsoft.AspNet.Identity
                         @if (Request.IsAuthenticated)
                         {
@@ -249,19 +254,21 @@
                 </div><!-- end row -->
             </div><!-- end container -->
         </div><!-- end section -->*@
-    <footer class="footer">
+    <footer class="footer message-box">
         <div class="container">
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                     <div class="post-media fadeIn">
-                        <div class="img-fluid img-rounded Mus" id="footerWillow"></div>
+                        <div class="img-fluid img-rounded Mus" id="footerWillow">
+                            <img src="~/Content/images/OptiTonks.png" alt="Tonks " id="footerMus" />
+                        </div>
                         @*<img src="~/Content/images/learning.jpg" alt="Willow at Work" id="footerWillow" class="img-fluid img-rounded">*@
                     </div><!-- end media -->
                 </div><!-- end col -->
-                <div class="col-lg-4 col-md-4 col-xs-12">
+                <div class="col-lg-3 col-md-4 col-xs-12">
                     <div class="widget clearfix">
                         <div class="widget-title">
-                            <h3>Staff Links</h3>
+                            <h4>Staff Links</h4>
                         </div>
                         <ul class="footer-links">
                             <li><a href="@Url.Action("Register", "Account")">Sign up for training!</a></li>
@@ -271,15 +278,14 @@
                     </div><!-- end clearfix -->
                 </div><!-- end col -->
 
-                <div class="col-lg-4 col-md-4 col-xs-12">
+                <div class="col-lg-5 col-md-5 col-xs-12">
                     <div class="widget clearfix">
                         <div class="widget-title">
-                            <h3>Have an idea for a course?</h3>
+                            <h4>Have an idea for a course?</h4>
                         </div>
                         <ul class="footer-links">
                             <li><a href="@Url.Action("Contact", "Home")">Contact us and send us your training suggestions!</a></li>
-                          </ul><!-- end links -->
-                        <img src="~/Content/images/OptiTonks.png" alt="Tonks "id="footerMus"/>
+                        </ul><!-- end links -->
                     </div><!-- end clearfix -->
                 </div><!-- end col -->
 
@@ -309,19 +315,19 @@
     <!-- FancyBox JS file -->
     <script src="~/Content/js/jquery.fancybox.min.js"></script>
     @RenderSection("scripts", required: false)
-    <script>
-        function range(start, end) {
-            var myArray = [];
-            for (var i = start; i <= end; i += 1) {
-                myArray.push(i);
-            }
-            return myArray;
-        };
-        var path = '/Content/images/lessons/lesson',
-            //imgs = new Array();
-            imgs = range(1, 10),
-            i = Math.floor(Math.random() * imgs.length);
-        $('.Mus').append("<img src='" + path + i + ".jpg'>").hide().fadeIn(2000);
-    </script>
+    @*<script>
+            function range(start, end) {
+                var myArray = [];
+                for (var i = start; i <= end; i += 1) {
+                    myArray.push(i);
+                }
+                return myArray;
+            };
+            var path = '/Content/images/lessons/lesson',
+                //imgs = new Array();
+                imgs = range(1, 10),
+                i = Math.floor(Math.random() * imgs.length);
+            $('.Mus').append("<img src='" + path + i + ".jpg'>").hide().fadeIn(2000);
+        </script>*@
 </body>
 </html>

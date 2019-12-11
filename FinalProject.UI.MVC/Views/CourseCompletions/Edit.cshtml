@@ -11,8 +11,8 @@
     {
         @Html.AntiForgeryToken()
 
-        <div class="form-horizontal">
-            <hr />
+        <div class="form-horizontal dimPage">
+            
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.CourseCompletionId)
 

@@ -7,8 +7,8 @@
     <h2>@ViewBag.Title</h2>
 
     <div>
-        <hr />
-        <dl class="dl-horizontal">
+
+        <dl class="dl-horizontal dimPage">
 
             <dt>
                 @Html.DisplayNameFor(model => model.UserDetail.FullName)
@@ -32,16 +32,17 @@
                 @Html.DisplayFor(model => model.DateViewed)
             </dd>
 
+
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to Viewed Lessons", "Index")
+                </div>
+            }
         </dl>
-
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
-
-            <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to Viewed Lessons", "Index")
-            </div>
-        }
     </div>
 </div>

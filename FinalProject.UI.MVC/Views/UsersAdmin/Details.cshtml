@@ -6,7 +6,7 @@
 <div class="container tbMargin">
     <h2>@ViewBag.Title</h2>
 
-    <div>
+    <div class="dimPage"
         <hr />
         <dl class="dl-horizontal">
             <dt>
@@ -16,29 +16,30 @@
                 @Html.DisplayFor(model => model.UserName)
             </dd>
         </dl>
-    </div>
-    <h4>List of roles for this user</h4>
-    @if (ViewBag.RoleNames.Count == 0)
-    {
-        <hr />
-        <p>No roles found for this user.</p>
-    }
 
-    <table class="table">
-
-        @foreach (var item in ViewBag.RoleNames)
+        <h4>List of roles for this user</h4>
+        @if (ViewBag.RoleNames.Count == 0)
         {
-            <tr>
-                <td>
-                    @item
-                </td>
-            </tr>
+            <hr />
+            <p>No roles found for this user.</p>
         }
-    </table>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List of Users", "Index")
-    </p>
+
+        <table class="table">
+
+            @foreach (var item in ViewBag.RoleNames)
+            {
+                <tr>
+                    <td>
+                        @item
+                    </td>
+                </tr>
+            }
+        </table>
+        <div>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List of Users", "Index")
+        </div>
+    </div>
 </div>
 
 

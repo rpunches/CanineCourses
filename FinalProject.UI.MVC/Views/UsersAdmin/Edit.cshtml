@@ -11,25 +11,25 @@
     {
         @Html.AntiForgeryToken()
 
-        <div class="form-horizontal">
-            <hr />
-            @Html.ValidationSummary(true)
-            @Html.HiddenFor(model => model.Id)
+    <div class="form-horizontal dimPage">
+      
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
 
-            @*<div class="form-group">
-                    @Html.LabelFor(model => model.FirstName, new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.FirstName)
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.LastName, new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.LastName)
-                    </div>*@
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.FirstName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.FirstName)
+            </div>
         </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.LastName)
+            </div>*@
+
         <div class="form-group">
             @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -39,13 +39,13 @@
         </div>
         <div class="form-group">
             @Html.Label("Roles", new { @class = "control-label col-md-2" })
-            <span class=" col-md-10">
+            <div class=" col-md-10">
                 @foreach (var item in Model.RolesList)
                 {
                     <input type="checkbox" name="SelectedRole" value="@item.Value" checked="@item.Selected" class="checkbox-inline" />
                     @Html.Label(item.Value, new { @class = "control-label" })
                 }
-            </span>
+            </div>
         </div>
 
         <div class="form-group">
@@ -53,7 +53,7 @@
                 <input type="submit" value="Save" class="btn btn-default" /> | @Html.ActionLink("Back to List of Users", "Index")
             </div>
         </div>
-
+    </div>
 
 
     }
