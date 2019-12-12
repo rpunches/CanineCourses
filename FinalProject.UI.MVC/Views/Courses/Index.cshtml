@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <div class="container tbMargin">
+    <div class="container tbMargin col-xl-9 col-lg-9 col-md-12 col-sm-12">
         <h2>@ViewBag.Title</h2>
         @if (User.IsInRole("Admin"))
         {
@@ -19,53 +19,49 @@
                 @Html.ActionLink("Create a new Course", "Create")
             </p>
         }
-            <div class="row centerRow">
-                @foreach (var item in Model)
-                {
-
-
-
-                    <div class="col-lg-3 col-md-6 col-sm-11">
-                        <div class="course-item">
-                            <div class="course-br">
-                                <div class="course-title">
-                                    <h2>
-                                        <a href="@Url.Action("Details", new { id = item.CourseId })">
-                                            @Html.DisplayFor(modelItem => item.CourseName)
-                                        </a>
-                                    </h2>
-                                </div>
-                                <div class="course-desc">
-                                    @*@Html.DisplayNameFor(model => model.CourseDescription)*@
-                                    <p>  @Html.DisplayFor(modelItem => item.CourseDescription) </p>
-                                </div>
-                               
+        <div class="row centerRow">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-3 col-md-6 col-sm-11">
+                    <div class="course-item">
+                        <div class="course-br">
+                            <div class="course-title">
+                                <h2>
+                                    <a href="@Url.Action("Details", new { id = item.CourseId })">
+                                        @Html.DisplayFor(modelItem => item.CourseName)
+                                    </a>
+                                </h2>
                             </div>
-                            
-                            <div class="course-meta-bot"><hr />
-                                @if (item.IsActive == true)
-                                {
-                                    <p style="float:left;">Available</p>
-                                }
-                                else
-                                {
-                                    <p style="color: red; font-style:italic; float: left;">Unavailable</p>
-                                }
-                                <div class="textRight">
-                                    @if (User.IsInRole("Admin"))
-                                    {
-                                        @Html.ActionLink("Edit", "Edit", new { id = item.CourseId }) @:|
-
-                                        @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })
-                                    }
-                                </div>
-                                <div class="clearfix"></div>
+                            <div class="course-desc">
+                                @*@Html.DisplayNameFor(model => model.CourseDescription)*@
+                                <p>  @Html.DisplayFor(modelItem => item.CourseDescription) </p>
                             </div>
-                           
                         </div>
-                    </div><!-- end col -->
-                }
-            </div>
+                        <div class="course-meta-bot">
+                            <hr />
+                            @if (item.IsActive == true)
+                            {
+                                <p style="float:left;">Available</p>
+                            }
+                            else
+                            {
+                                <p style="color: red; font-style:italic; float: left;">Unavailable</p>
+                            }
+                            <div class="textRight">
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.CourseId }) @:|
+
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })
+                                }
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </div>
+                </div><!-- end col -->
+            }
         </div>
+    </div>
 
 </div>

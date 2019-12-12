@@ -156,7 +156,7 @@ namespace FinalProject.UI.MVC.Controllers
                     db.CourseCompletions.Add(completedCourse);
                     db.SaveChanges();
 
-                    string message = $"A message from OffLeash Academy:<br/>{lesson.Cours.CourseName} has been completed by {User.Identity.Name}!<br/> <a>Click here</a> to view the lessons completed as part of the course!";
+                    string message = $"{lesson.Cours.CourseName} has been completed by {User.Identity.Name}!";
 
                     //what sends the email
                     MailMessage mm = new MailMessage("admin@rachelpunches.com", "aoffleash@gmail.com", null, message);
@@ -231,6 +231,7 @@ namespace FinalProject.UI.MVC.Controllers
                         imgName = "Blank.pdf";
                     }
                 }
+                
                 lesson.PdfFileName = imgName;
                 #endregion
 
@@ -266,10 +267,33 @@ namespace FinalProject.UI.MVC.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "LessonId,LessonTitle,CourseId,Introduction,VideoURL,PdfFileName,IsActive")] Lesson lesson)
+        public ActionResult Edit([Bind(Include = "LessonId,LessonTitle,CourseId,Introduction,VideoURL,PdfFileName,IsActive")] Lesson lesson, HttpPostedFileBase pdfFile)
         {
             if (ModelState.IsValid)
             {
+                string imgName = "Blank.pdf";
+                #region File Upload
+                if (pdfFile != null)
+                {
+                    imgName = pdfFile.FileName;
+
+                    string ext = imgName.Substring(imgName.LastIndexOf("."));
+
+                    string[] goodExts = { ".pdf", ".jpg", ".jpeg", ".png" };
+
+                    if (goodExts.Contains(ext.ToLower()) && (pdfFile.ContentLength <= 4194304))
+                    {
+                        imgName = Guid.NewGuid() + ext;
+                        pdfFile.SaveAs(Server.MapPath("~/Content/lessons/" + imgName));
+                    }
+                    else
+                    {
+                        imgName = "Blank.pdf";
+                    }
+                }
+
+                lesson.PdfFileName = imgName;
+                #endregion
                 db.Entry(lesson).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -138,7 +138,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="@Url.Action("Index", "Home")">
                     <img src="~/Content/images/WillowLogo.png" alt="Willow Logo" class="homeWillow" id="navbarLogo" style=" max-height: 100px; margin-right: -45px;" />
-                    <h1 style=" font-weight: bold; color: #eea412; display: inline; font-size:2em;" class="homeShadow">OffLeash Academy</h1>
+                    <h1>OffLeash Academy</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"></span>
@@ -153,24 +153,22 @@
                             @if (User.IsInRole("Admin") || (User.IsInRole("Manager") || (User.IsInRole("User"))))
                             {
                                 <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                                    @if (User.IsInRole("Admin"))
-                                    {
-                                        <a class="dropdown-item" href="@Url.Action("Create", "Courses")">Create a New Course</a>
-                                    }
-                                    <a class="dropdown-item" href="@Url.Action("Index", "CourseCompletions")">Courses Completed</a>
+                                    @*@if (User.IsInRole("Admin"))
+                    {
+                        <a class="dropdown-item" href="@Url.Action("Create", "Courses")">Create a New Course</a>
+                    }*@  <a class="dropdown-item" href="@Url.Action("Index", "CourseCompletions")">Courses Completed</a>
                                 </div>
                             }
                         </li>
                         <li class="nav-item dropdown">
-
                             <a class="nav-link" href="@Url.Action("Index", "Lessons")">Lessons</a>
-                            @if (User.IsInRole("Admin") || User.IsInRole("Manager"))
+                            @if(User.IsInRole("Admin") || (User.IsInRole("Manager") || (User.IsInRole("User"))))
                             {
                                 <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                                    @if (User.IsInRole("Admin"))
-                                    {
-                                        <a class="dropdown-item" href="@Url.Action("Create", "Lessons")">Create a New Lesson</a>
-                                    }
+                                    @*@if (User.IsInRole("Admin"))
+                    {
+                        <a class="dropdown-item" href="@Url.Action("Create", "Lessons")">Create a New Lesson</a>
+                    }*@
                                     <a class="dropdown-item" href="@Url.Action("Index", "LessonViews")">Viewed Lessons</a>
                                 </div>
                             }
@@ -178,29 +176,34 @@
                         </li>
 
                         @*@if (User.IsInRole("Admin") || User.IsInRole("Manager") || User.IsInRole("User"))
-                            {
-                                <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "CourseCompletions")">Courses Completed</a></li>
-                            }*@
+        {
+            <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "CourseCompletions")">Courses Completed</a></li>
+        }*@
                         @using Microsoft.AspNet.Identity
                         @if (Request.IsAuthenticated)
                         {
                             using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
                             {
                                 @Html.AntiForgeryToken()
-                                <li class="nav-item dropdown">
+                                if (User.IsInRole("Admin"))
+                                {
+                                    <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "UsersAdmin")">User Admin</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "RolesAdmin")">Roles Admin</a></li>
+                                 
+                                }
+                                @*<li class="nav-item dropdown">
 
-                                    <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Account</a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                                        @Html.ActionLink("Hello " + User.Identity.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "dropdown-item" })
-                                        @if (User.IsInRole("Admin"))
-                                        {
-                                            <a class="dropdown-item" href="@Url.Action("Index", "UsersAdmin")">User Admin</a>
-                                            <a class="dropdown-item" href="@Url.Action("Index", "RolesAdmin")">Roles Admin</a>
-                                        }
-                                        @*<a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Log Off</a>*@
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Account</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                    @Html.ActionLink("Hello " + User.Identity.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "dropdown-item" })
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a class="dropdown-item" href="@Url.Action("Index", "UsersAdmin")">User Admin</a>
+                        <a class="dropdown-item" href="@Url.Action("Index", "RolesAdmin")">Roles Admin</a>
+                    }
+                    @*<a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Log Off</a>*@
 
-                                    </div>
-                                </li>
+
                                 @*<ul class="nav navbar-nav navbar-right">
                                         <a class="hover-btn-new log" href="javascript:document.getElementById('logoutForm').submit()">Log Off</a>
                                     </ul>*@
@@ -286,6 +289,13 @@
                         <ul class="footer-links">
                             <li><a href="@Url.Action("Contact", "Home")">Contact us and send us your training suggestions!</a></li>
                         </ul><!-- end links -->
+                        <div class="widget-title">
+                            <h4>Project Links</h4>
+                        </div>
+                        <ul class="footer-links">
+                            <li><a href="~/Content/Rachel_Punches_Final_Project_Documentation_web.pdf" target="_blank">Documentation</a></li>
+                            <li><a href="https://github.com/rpunches/CanineCourses" target="_blank">GitHub Repository</a></li>
+                        </ul><!-- end links -->
                     </div><!-- end clearfix -->
                 </div><!-- end col -->
 
@@ -315,6 +325,14 @@
     <!-- FancyBox JS file -->
     <script src="~/Content/js/jquery.fancybox.min.js"></script>
     @RenderSection("scripts", required: false)
+    <script>
+        $('.navbar-collapse ul li').each(function () {
+            if ($(this).find('a').attr('href') == window.location.pathname) {
+                $(this).addClass('active');
+            }
+        })
+    </script>
+
     @*<script>
             function range(start, end) {
                 var myArray = [];

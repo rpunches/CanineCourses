@@ -10,7 +10,7 @@ using FinalProject.DATA.EF;
 
 namespace FinalProject.UI.MVC.Controllers
 {
-    [Authorize(Roles = "Admin, Manager")]
+    
     public class LessonViewsController : Controller
     {
         private CanineCoursesEntities db = new CanineCoursesEntities();
@@ -40,16 +40,18 @@ namespace FinalProject.UI.MVC.Controllers
         }
 
         // GET: LessonViews/Create
+        [Authorize(Roles = "Admin, Manager")]
         public ActionResult Create()
         {
             ViewBag.LessonId = new SelectList(db.Lessons, "LessonId", "LessonTitle");
-            ViewBag.UserId = new SelectList(db.UserDetails, "UserId", "FirstName");
+            ViewBag.UserId = new SelectList(db.UserDetails, "UserId", "FullName");
             return View();
         }
 
         // POST: LessonViews/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin, Manager")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "LessonViewId,UserId,LessonId,DateViewed")] LessonView lessonView)
@@ -65,8 +67,9 @@ namespace FinalProject.UI.MVC.Controllers
             ViewBag.UserId = new SelectList(db.UserDetails, "UserId", "FirstName", lessonView.UserId);
             return View(lessonView);
         }
-        
+
         // GET: LessonViews/Edit/5
+        [Authorize(Roles = "Admin, Manager")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -86,6 +89,7 @@ namespace FinalProject.UI.MVC.Controllers
         // POST: LessonViews/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin, Manager")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "LessonViewId,UserId,LessonId,DateViewed")] LessonView lessonView)
@@ -102,6 +106,7 @@ namespace FinalProject.UI.MVC.Controllers
         }
 
         // GET: LessonViews/Delete/5
+        [Authorize(Roles = "Admin, Manager")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -117,6 +122,7 @@ namespace FinalProject.UI.MVC.Controllers
         }
 
         // POST: LessonViews/Delete/5
+        [Authorize(Roles = "Admin, Manager")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

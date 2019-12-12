@@ -29,10 +29,21 @@
    
 }
 
+@media (max-width: 767px) {
+    #bgPic {
+        background: url('gardenFieldPic.jpg') no-repeat center center fixed;
+        background-size:cover;
+    }
+
+    #bgPic video {
+        display: none;
+    }
+}
+
 
 p {
     filter: drop-shadow(3px 3px 2px lightgray);
-    }
+}
 
 h1, h3 {
     filter: drop-shadow(3px 3px 3px #a8a8a8);
@@ -95,6 +106,14 @@ h2 {
     .nav-item {
         filter: drop-shadow(0px 2px 5px #383527);
     }
+
+.navbar-brand h1 {
+    font-weight: bold;
+    color: #eea412;
+    display: inline;
+    font-size: 2em;
+    filter: drop-shadow(3px 3px 5px black);
+}
 
     /*Course Cards*/
     .course-br {

@@ -31,7 +31,7 @@
                     </dd>
                 }
 
-                @if (Model.PdfFileName != null)
+                @if (Model.PdfFileName != null && Model.VideoURL == null)
                 {
                     <dd>
                         <div class="blog-button">
@@ -69,17 +69,21 @@
         //    i = Math.floor(Math.random() * imgs.length);
         //$('.Mus').append("<img src='" + path + imgs[i] + "'>").hide().fadeIn(2000);
        
-        function range(start, end) {
-            var myArray = [];
-            for (var i = start; i <= end; i += 1) {
-                myArray.push(i);
-            }
-            return myArray;
-        };
+        //function range(start, end) {
+        //    var myArray = [];
+        //    for (var i = start; i <= end; i += 1) {
+        //        myArray.push(i);
+        //    }
+        //    return myArray;
+        //};
+        //var path = '/Content/images/handlers/h',
+        //    //imgs = new Array();
+        //    imgs = range(1, 11),
+        //    i = Math.floor(Math.random() * imgs.length);
+        //$('.lessonPic').append("<img src='" + path + i + ".jpg'>").hide().fadeIn(2000);
+       
         var path = '/Content/images/handlers/h',
-            //imgs = new Array();
-            imgs = range(1, 11),
-            i = Math.floor(Math.random() * imgs.length);
+            i = Math.floor((Math.random() * 23) + 1);
         $('.lessonPic').append("<img src='" + path + i + ".jpg'>").hide().fadeIn(2000);
 
     </script>

@@ -74,7 +74,7 @@ namespace FinalProject.UI.MVC.Controllers
         public ActionResult Create()
         {
             ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "CourseName");
-            ViewBag.UserId = new SelectList(db.UserDetails, "UserId", "FirstName");
+            ViewBag.UserId = new SelectList(db.UserDetails, "UserId", "FullName");
             return View();
         }
 
