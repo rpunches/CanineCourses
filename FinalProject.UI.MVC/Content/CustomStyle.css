@@ -87,10 +87,11 @@ h2 {
         background: none;
     }
 
-    .section-title p {
-        color: white;
-        filter: drop-shadow(3px 3px 2px black);
-    }
+.section-title p {
+    color: white;
+    filter: drop-shadow(3px 3px 2px black);
+    line-height: 27px;
+}
 
     div.container.tbMargin > h2 {
         color: white;
